@@ -14,7 +14,7 @@ $factory->define(Service::class, function (Faker $faker) {
         'title' => $faker->realText(40),
         'description' => $faker->text(120),
         'fee_int' => $faker->numberBetween(50, 200) * 100,
-        'max_amount' => $faker->numberBetween(1, 5) * 200,
+        'max_voucher_numbers' => $faker->numberBetween(1, 5) * 200,
         'discount_int' => $faker->numberBetween(1, 4) * 5,
         'user_id' => User::inRandomOrder()->first()->id,
     ];
