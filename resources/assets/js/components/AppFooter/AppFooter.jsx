@@ -4,13 +4,12 @@ import { linkStyle } from 'constants/styles'
 
 export const AppFooter = props => (
   <p className="text-center text-sm text-grey py-8">
-    React Laravel Boilerplate - Made by{' '}
+    Hack Yeah 2020 - Made by{' '}
     <a
       className={linkStyle}
-      target="_blank"
-      href="https://www.github.com/huwcarwyn"
+      href="#"
     >
-      Carwyn
+      SPK
     </a>
   </p>
 )

@@ -1,33 +1,39 @@
 import Helmet from 'react-helmet'
 import React, { Fragment } from 'react'
 import { useModal } from 'react-context-modals'
+import { connect } from 'react-redux'
 
 import { NeutralButton } from 'components'
+import { currentUserSelector } from 'store/selectors/session'
+import { Link } from "react-router-dom";
 
-const OverviewComponent = () => {
-  const ModalExample = props => <div className="p-16">{props.message}</div>
+const OverviewComponent = (props) => {
+  const ModalExample = modalProps => <div className="p-16">{modalProps.message}</div>;
+  const {user} = props
 
-  const { showModal } = useModal()
+  const {showModal} = useModal()
 
   return (
     <Fragment>
       <Helmet>
-        <title>Boilerplate overview</title>
+        <title>Dashboard</title>
       </Helmet>
-      Put your initial dashboard page here
-      <div className="mt-4">
-        <NeutralButton
-          onClick={() =>
-            showModal(ModalExample, {
-              message: 'This message was passed in via modal props'
-            })
-          }
-        >
-          Open an example modal
-        </NeutralButton>
+
+      <h2 className="text-center mb-5">Hello, {user.first_name}!</h2>
+
+      <div className="mt-4 text-center">
+        <Link to="/settings/user">
+          <NeutralButton>
+            Go to settings
+          </NeutralButton>
+        </Link>
       </div>
     </Fragment>
   )
 }
 
-export default OverviewComponent
+export default connect(
+  (state) => ({
+    user: currentUserSelector(state)
+  })
+)(OverviewComponent)
