@@ -4,3 +4,4 @@ server/build
 client/dist
 dist/
 .env
+/**/ormconfig.json

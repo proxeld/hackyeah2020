@@ -96,6 +96,7 @@ $ npm install
 ### Create Database
 
 - Required only initial setup
+- Copy `server/project/ormconfig.json.example` as `server/project/ormconfig.json` file and update it's configuration
 - Find default Postgres Database Configs by navigating to `server/project/ormconfig.json` file
 - Connect to Postgres shell: `psql postgres`
 - Create database:
