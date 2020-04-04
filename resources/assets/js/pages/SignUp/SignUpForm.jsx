@@ -1,22 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { Formik, Form, Field } from 'formik'
+import {Link} from 'react-router-dom'
+import {Field, Form, Formik} from 'formik'
 
-import { linkStyle } from 'constants/styles'
-import { email as emailRegex } from 'constants/regexes'
-import { PasswordFormLine, TextFormLine, NeutralButton } from 'components'
-import { ShieldPasswordInput, ShieldTextInput } from '../../components/Forms/Inputs';
+import {email as emailRegex} from 'constants/regexes'
+import {ShieldPasswordInput, ShieldTextInput} from '../../components/Forms/Inputs'
 
 const validate = (values = {}) => {
   let errors = {}
-
-  if (!values.first_name) {
-    errors.first_name = 'This field is required'
-  }
-
-  if (!values.last_name) {
-    errors.last_name = 'This field is required'
-  }
 
   if (!values.email) {
     errors.email = 'This field is required'
@@ -74,9 +64,9 @@ export const SignUpForm = ({onSubmit}) => (
                 <label className="kt-checkbox">
                   <input type="checkbox" name="agree"/>I Agree the
                   <a href="#" className="kt-link kt-login__link kt-font-bold">&nbsp;terms and conditions</a>.
-                  <span></span>
+                  <span/>
                 </label>
-                <span className="form-text text-muted"></span>
+                <span className="form-text text-muted"/>
               </div>
             </div>
             <div className="kt-login__actions">

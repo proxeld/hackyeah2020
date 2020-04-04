@@ -1,7 +1,7 @@
 import React from 'react'
-import { getVoucherList } from '../../services/api/company-vouchers'
-import { VoucherStatusEnum } from '../../models/vouchers'
-import { Link } from 'react-router-dom'
+import {getVoucherList} from '../../services/api/company-vouchers'
+import {VoucherStatusEnum} from '../../models/vouchers'
+import {Link} from 'react-router-dom'
 import './VoucherTable.scss'
 
 const VoucherStatus = ({status}) => {
@@ -21,7 +21,7 @@ const VoucherStatus = ({status}) => {
 
   return (
     <div className="voucher-status">
-      <span className="dot" styleName={`dot`} style={{background: colorsMap[status]}} />&nbsp;
+      <span style={{background: colorsMap[status]}}/>&nbsp;
       {statusText}
     </div>
   )
@@ -80,7 +80,7 @@ const Table = (props) => {
   )
 }
 
-export const VouchersTable = (props) => {
+export const VouchersTable = () => {
   let [vouchers] = React.useState([
     {
       id: 1,

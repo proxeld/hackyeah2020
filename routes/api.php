@@ -32,6 +32,9 @@ Route::group(['prefix' => 'guest'], function () {
 
     Route::prefix('vouchers')
         ->group(base_path('routes/guest/vouchers.php'));
+
+    Route::prefix('user-companies')
+        ->group(base_path('routes/guest/user_companies.php'));
 });
 
 /**

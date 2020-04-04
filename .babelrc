@@ -15,17 +15,24 @@
 	],
 
 	"plugins": [
-		"@babel/plugin-proposal-object-rest-spread",
-		"@babel/plugin-syntax-dynamic-import",
-		["react-css-modules", {
-		  "filetypes": {
-		    ".scss": {
-		      "syntax": "postcss-scss",
-		      "plugins": ["postcss-nested"]
-		    }
-		  },
-		  "generateScopedName": "[local]_[hash:base64:5]"
-		}],
-		"react-hot-loader/babel"
-	]
+      "@babel/plugin-proposal-object-rest-spread",
+      "@babel/plugin-proposal-function-bind",
+      "@babel/plugin-syntax-dynamic-import",
+      "@babel/plugin-proposal-class-properties",
+      [
+        "react-css-modules",
+        {
+          "filetypes": {
+            ".scss": {
+              "syntax": "postcss-scss",
+              "plugins": [
+                "postcss-nested"
+              ]
+            }
+          },
+          "generateScopedName": "[local]_[hash:base64:5]"
+        }
+      ],
+      "react-hot-loader/babel"
+    ]
 }

@@ -3,6 +3,8 @@
 namespace App\Services\User;
 
 use App\Contracts\Repository\UserRepositoryContract as UserRepository;
+use App\Models\User;
+use App\Services\Common\StaticArray;
 use Illuminate\Contracts\Routing\ResponseFactory as Response;
 use Illuminate\Contracts\Validation\Factory as Validator;
 use Illuminate\Validation\ValidationException;
@@ -45,6 +47,9 @@ class SignUpService
     {
         try {
             $newUser = $this->signUp($userInfo);
+            $newUser->role = StaticArray::USER_ROLE_COMPANY;
+            $newUser->save();
+
             $apiCookie = $this->cookie->make($newUser->id, $csrfToken);
 
             return $this->response->success(['message' => 'User successfully signed up'])->withCookie($apiCookie);
@@ -55,7 +60,7 @@ class SignUpService
 
     /**
      * @param $userInfo
-     * @return mixed
+     * @return User
      * @throws ValidationException
      */
     public function signUp($userInfo)
