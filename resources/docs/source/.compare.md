@@ -73,6 +73,64 @@ fetch(url, {
 
 <!-- END_dc72ce1c48a10112b189b0b4b1719ec7 -->
 
+<!-- START_c4e1cc2d3f082c4cb7b32449f9e52ba0 -->
+## store
+
+Store a new voucher
+
+> Example request:
+
+```bash
+curl -X POST \
+    "/api/client/vouchers" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json" \
+    -d '{"service_id":17}'
+
+```
+
+```javascript
+const url = new URL(
+    "/api/client/vouchers"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+let body = {
+    "service_id": 17
+}
+
+fetch(url, {
+    method: "POST",
+    headers: headers,
+    body: body
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "data": []
+}
+```
+
+### HTTP Request
+`POST api/client/vouchers`
+
+#### Body Parameters
+Parameter | Type | Status | Description
+--------- | ------- | ------- | ------- | -----------
+    `service_id` | integer |  optional  | ID of a service.
+    
+<!-- END_c4e1cc2d3f082c4cb7b32449f9e52ba0 -->
+
 <!-- START_9b906f62cd458038d89add97646a086c -->
 ## get
 
@@ -239,14 +297,14 @@ Get service by ID
 
 ```bash
 curl -X GET \
-    -G "/api/company/services/aliquam" \
+    -G "/api/company/services/nulla" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "/api/company/services/aliquam"
+    "/api/company/services/nulla"
 );
 
 let headers = {
@@ -294,7 +352,7 @@ curl -X POST \
     "/api/company/services" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"warning":false,"title":"dolorem","fee_int":"beatae","fee_currency":"corporis","payment_method":14,"payment_status":9,"payment_details":"sint","paid_at":"eum"}'
+    -d '{"warning":false,"title":"unde","fee_int":"consequatur","fee_currency":"sed","payment_method":7,"payment_status":15,"payment_details":"quidem","paid_at":"repudiandae"}'
 
 ```
 
@@ -310,13 +368,13 @@ let headers = {
 
 let body = {
     "warning": false,
-    "title": "dolorem",
-    "fee_int": "beatae",
-    "fee_currency": "corporis",
-    "payment_method": 14,
-    "payment_status": 9,
-    "payment_details": "sint",
-    "paid_at": "eum"
+    "title": "unde",
+    "fee_int": "consequatur",
+    "fee_currency": "sed",
+    "payment_method": 7,
+    "payment_status": 15,
+    "payment_details": "quidem",
+    "paid_at": "repudiandae"
 }
 
 fetch(url, {
@@ -363,16 +421,16 @@ Update category by ID
 
 ```bash
 curl -X PUT \
-    "/api/company/services/non" \
+    "/api/company/services/beatae" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"warning":true,"title":"non","fee_int":"asperiores","fee_currency":"nisi","payment_method":13,"payment_status":16,"payment_details":"esse","paid_at":"unde"}'
+    -d '{"warning":true,"title":"ut","fee_int":"corrupti","fee_currency":"explicabo","payment_method":7,"payment_status":7,"payment_details":"ut","paid_at":"architecto"}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "/api/company/services/non"
+    "/api/company/services/beatae"
 );
 
 let headers = {
@@ -382,13 +440,13 @@ let headers = {
 
 let body = {
     "warning": true,
-    "title": "non",
-    "fee_int": "asperiores",
-    "fee_currency": "nisi",
-    "payment_method": 13,
-    "payment_status": 16,
-    "payment_details": "esse",
-    "paid_at": "unde"
+    "title": "ut",
+    "fee_int": "corrupti",
+    "fee_currency": "explicabo",
+    "payment_method": 7,
+    "payment_status": 7,
+    "payment_details": "ut",
+    "paid_at": "architecto"
 }
 
 fetch(url, {
@@ -442,14 +500,14 @@ Remove service by ID
 
 ```bash
 curl -X DELETE \
-    "/api/company/services/hic" \
+    "/api/company/services/occaecati" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "/api/company/services/hic"
+    "/api/company/services/occaecati"
 );
 
 let headers = {
@@ -547,14 +605,14 @@ Get voucher by ID
 
 ```bash
 curl -X GET \
-    -G "/api/company/vouchers/adipisci" \
+    -G "/api/company/vouchers/eos" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "/api/company/vouchers/adipisci"
+    "/api/company/vouchers/eos"
 );
 
 let headers = {
@@ -599,16 +657,16 @@ Update voucher by ID
 
 ```bash
 curl -X PUT \
-    "/api/company/vouchers/quos" \
+    "/api/company/vouchers/consequuntur" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"voucher_status":15}'
+    -d '{"voucher_status":12}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "/api/company/vouchers/quos"
+    "/api/company/vouchers/consequuntur"
 );
 
 let headers = {
@@ -617,7 +675,7 @@ let headers = {
 };
 
 let body = {
-    "voucher_status": 15
+    "voucher_status": 12
 }
 
 fetch(url, {
@@ -664,14 +722,14 @@ Remove voucher by ID
 
 ```bash
 curl -X DELETE \
-    "/api/company/vouchers/nihil" \
+    "/api/company/vouchers/eius" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "/api/company/vouchers/nihil"
+    "/api/company/vouchers/eius"
 );
 
 let headers = {
@@ -1938,7 +1996,7 @@ fetch(url, {
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "2bbce044-1d02-4197-9f24-447f378d12b3",
+        "_postman_id": "1c25821e-cfa7-401e-81d2-44eb89ecb48e",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -2077,7 +2135,7 @@ fetch(url, {
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "tenetur",
+                                    "value": "aliquam",
                                     "description": "integer The ID of the service."
                                 }
                             ]
@@ -2123,7 +2181,7 @@ fetch(url, {
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"warning\": false,\n    \"title\": \"rerum\",\n    \"fee_int\": \"et\",\n    \"fee_currency\": \"illo\",\n    \"payment_method\": 6,\n    \"payment_status\": 12,\n    \"payment_details\": \"veniam\",\n    \"paid_at\": \"mollitia\"\n}"
+                            "raw": "{\n    \"warning\": false,\n    \"title\": \"dolorem\",\n    \"fee_int\": \"beatae\",\n    \"fee_currency\": \"corporis\",\n    \"payment_method\": 14,\n    \"payment_status\": 9,\n    \"payment_details\": \"sint\",\n    \"paid_at\": \"eum\"\n}"
                         },
                         "description": "Store a new service",
                         "response": []
@@ -2141,7 +2199,7 @@ fetch(url, {
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "beatae",
+                                    "value": "non",
                                     "description": "integer The ID of the service."
                                 }
                             ]
@@ -2159,7 +2217,7 @@ fetch(url, {
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"warning\": true,\n    \"title\": \"non\",\n    \"fee_int\": \"eaque\",\n    \"fee_currency\": \"dolores\",\n    \"payment_method\": 17,\n    \"payment_status\": 3,\n    \"payment_details\": \"molestias\",\n    \"paid_at\": \"dolores\"\n}"
+                            "raw": "{\n    \"warning\": true,\n    \"title\": \"non\",\n    \"fee_int\": \"asperiores\",\n    \"fee_currency\": \"nisi\",\n    \"payment_method\": 13,\n    \"payment_status\": 16,\n    \"payment_details\": \"esse\",\n    \"paid_at\": \"unde\"\n}"
                         },
                         "description": "Update category by ID",
                         "response": []
@@ -2177,7 +2235,7 @@ fetch(url, {
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "et",
+                                    "value": "hic",
                                     "description": "integer The ID of the service."
                                 }
                             ]
@@ -2247,7 +2305,7 @@ fetch(url, {
                                 {
                                     "id": "voucher_id",
                                     "key": "voucher_id",
-                                    "value": "et",
+                                    "value": "adipisci",
                                     "description": "integer The ID of the voucher."
                                 }
                             ]
@@ -2283,7 +2341,7 @@ fetch(url, {
                                 {
                                     "id": "voucher_id",
                                     "key": "voucher_id",
-                                    "value": "voluptatem",
+                                    "value": "quos",
                                     "description": "integer The ID of the voucher."
                                 }
                             ]
@@ -2301,7 +2359,7 @@ fetch(url, {
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"voucher_status\": 6\n}"
+                            "raw": "{\n    \"voucher_status\": 15\n}"
                         },
                         "description": "Update voucher by ID",
                         "response": []
@@ -2319,7 +2377,7 @@ fetch(url, {
                                 {
                                     "id": "voucher_id",
                                     "key": "voucher_id",
-                                    "value": "culpa",
+                                    "value": "nihil",
                                     "description": "integer The ID of the voucher."
                                 }
                             ]
