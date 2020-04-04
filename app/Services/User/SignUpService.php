@@ -2,15 +2,18 @@
 
 namespace App\Services\User;
 
-use Laravel\Passport\ApiTokenCookieFactory;
-use Illuminate\Validation\ValidationException;
-use Illuminate\Contracts\Validation\Factory as Validator;
-use Illuminate\Contracts\Routing\ResponseFactory as Response;
 use App\Contracts\Repository\UserRepositoryContract as UserRepository;
+use Illuminate\Contracts\Routing\ResponseFactory as Response;
+use Illuminate\Contracts\Validation\Factory as Validator;
+use Illuminate\Validation\ValidationException;
+use Laravel\Passport\ApiTokenCookieFactory;
 
 class SignUpService
 {
     private $validator;
+    /**
+     * @var \Response $response
+     */
     private $response;
     private $cookie;
     private $user;
@@ -20,7 +23,8 @@ class SignUpService
         UserRepository $user,
         Response $response,
         ApiTokenCookieFactory $cookie
-    ) {
+    )
+    {
         $this->user = $user;
         $this->cookie = $cookie;
         $this->response = $response;
@@ -30,8 +34,8 @@ class SignUpService
     public function validateUserData($data)
     {
         return $this->validator->make($data, [
-            'first_name' => 'required',
-            'last_name' => 'required',
+            'first_name' => 'nullable',
+            'last_name' => 'nullable',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|min:8'
         ]);
@@ -49,6 +53,11 @@ class SignUpService
         }
     }
 
+    /**
+     * @param $userInfo
+     * @return mixed
+     * @throws ValidationException
+     */
     public function signUp($userInfo)
     {
         $validator = $this->validateUserData($userInfo);

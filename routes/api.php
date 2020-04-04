@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Http\Request;
-
 Route::group(['middleware' => ['auth:api']], function () {
     Route::get('/users/me', '\App\Api\Controllers\SessionController@currentUser');
     Route::get('/logout', '\App\Api\Controllers\SessionController@logout');
@@ -13,6 +11,21 @@ Route::group(['middleware' => ['auth:api']], function () {
     Route::post('/avatars', '\App\Api\Controllers\AvatarsController@upload');
     Route::put('/avatars', '\App\Api\Controllers\AvatarsController@update');
     Route::delete('/avatars', '\App\Api\Controllers\AvatarsController@delete');
+
+    Route::group(['middleware' => ['company'], 'prefix' => 'company'], function () {
+
+        Route::prefix('vouchers')
+            ->group(base_path('routes/company/vouchers.php'));
+
+        Route::prefix('services')
+            ->group(base_path('routes/company/services.php'));
+    });
+
+    Route::group(['middleware' => ['client'], 'prefix' => 'client'], function () {
+
+        Route::prefix('vouchers')
+            ->group(base_path('routes/client/vouchers.php'));
+    });
 });
 
 /**
