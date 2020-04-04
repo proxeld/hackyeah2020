@@ -51,7 +51,7 @@ class Service extends ValidModel
     // use soft delete instead of permanent delete
     use SoftDeletes;
 
-    protected $visible = ['image', 'title', 'description', 'fee_int', 'max_amount', 'discount_int', 'created_at', 'company'];
+    protected $visible = ['id', 'image', 'title', 'description', 'fee_int', 'max_amount', 'discount_int', 'created_at', 'company'];
 
     protected $fillable = ['image', 'title', 'description', 'fee_int', 'max_amount', 'discount_int'];
 
