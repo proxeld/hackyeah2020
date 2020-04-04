@@ -39,6 +39,6 @@ Route::post('/reset-password', '\App\Api\Controllers\PasswordResetController@res
  * middleware.
  */
 Route::group(['middleware' => ['encryptCookies']], function () {
-    Route::post('/login', '\App\Api\Controllers\SessionController@login');
-    Route::post('/signup', '\App\Api\Controllers\UserController@signup');
+    Route::post('/login', '\App\Api\Controllers\SessionController@login')->name('login');
+    Route::post('/signup', '\App\Api\Controllers\UserController@signup')->name('signup');
 });
