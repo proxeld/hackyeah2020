@@ -27,8 +27,8 @@ class CompanyVouchersController extends RestController
      *
      * Get all vouchers
      *
-     * @transformercollection \App\Transformers\Service\ServiceTransformer
-     * @transformerModel \App\Models\Service
+     * @transformercollection \App\Transformers\Voucher\VoucherTransformer
+     * @transformerModel \App\Models\Voucher
      *
      * @return LengthAwarePaginator|mixed
      */
@@ -44,7 +44,7 @@ class CompanyVouchersController extends RestController
      *
      * @urlParam voucher_id required integer The ID of the voucher.
      *
-     * @transformer \App\Transformers\Service\ServiceTransformer
+     * @transformer \App\Transformers\Voucher\VoucherTransformer
      *
      * @param $voucher_id int required The id of the voucher. Example: 1
      * @return JsonResponse
@@ -78,7 +78,7 @@ class CompanyVouchersController extends RestController
      *
      * Update voucher by ID
      * @urlParam voucher_id required integer The ID of the voucher.
-     * @transformer \App\Transformers\Service\ServiceTransformer
+     * @transformer \App\Transformers\Voucher\VoucherTransformer
      *
      * @param VoucherUpdateRequest $request
      * @param $voucher_id int required The id of the voucher. Example: 1
@@ -103,7 +103,7 @@ class CompanyVouchersController extends RestController
      *
      * @urlParam voucher_id required integer The ID of the voucher.
      *
-     * @transformer \App\Transformers\Service\ServiceTransformer
+     * @transformer \App\Transformers\Voucher\VoucherTransformer
      *
      * @param $voucher_id int required The id of the voucher. Example: 1
      * @return JsonResponse

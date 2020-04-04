@@ -27,6 +27,9 @@ class VoucherTransformer extends TransformerAbstract
      */
     public function transform(Voucher $model)
     {
-        return $model->toArray();
+        $data = $model->toArray();
+        $data['user'] = $model->user;
+        $data['service'] = $model->service;
+        return $data;
     }
 }

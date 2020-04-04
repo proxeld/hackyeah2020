@@ -86,8 +86,56 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-json">{
     "data": [
-        [],
-        []
+        {
+            "voucher_status": 2,
+            "code": "NRXDZZLAWXIP",
+            "user": {
+                "first_name": "Alanis",
+                "last_name": "Jose",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/15.jpg"
+            },
+            "service": {
+                "image": "https:\/\/lorempixel.com\/640\/480\/?16441",
+                "title": "Cat. '--so long as it was looking up.",
+                "description": "Dolor voluptatem temporibus et qui cumque totam. Accusamus optio dignissimos eligendi quisquam.",
+                "fee_int": 17200,
+                "max_amount": 400,
+                "discount_int": 10,
+                "created_at": "2020-04-04 19:16:35",
+                "company": {
+                    "first_name": "Reuben",
+                    "last_name": "Camron",
+                    "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/28.jpg",
+                    "company_name": "Hammes-Koch",
+                    "company_address": "47213 Langworth Walks Suite 431\nEast Verdieside, ME 26385"
+                }
+            }
+        },
+        {
+            "voucher_status": 2,
+            "code": "NS0XWMNGD6UF",
+            "user": {
+                "first_name": "Tremaine",
+                "last_name": "Antwan",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/35.jpg"
+            },
+            "service": {
+                "image": "https:\/\/lorempixel.com\/640\/480\/?53210",
+                "title": "Alice ventured to say. 'What is it?'.",
+                "description": "Eum nostrum asperiores est aut magni quia odio. Nesciunt fuga error quia quia mollitia.",
+                "fee_int": 19400,
+                "max_amount": 400,
+                "discount_int": 10,
+                "created_at": "2020-04-04 19:16:35",
+                "company": {
+                    "first_name": "Tremaine",
+                    "last_name": "Antwan",
+                    "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/35.jpg",
+                    "company_name": "Rath Ltd",
+                    "company_address": "63947 Eleazar Trail Apt. 293\nColtenville, OK 91572-0370"
+                }
+            }
+        }
     ]
 }</code></pre>
 <h3>HTTP Request</h3>
@@ -103,7 +151,7 @@ fetch(url, {
     "/api/client/vouchers" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"service_id":17}'
+    -d '{"service_id":14}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "/api/client/vouchers"
@@ -115,7 +163,7 @@ let headers = {
 };
 
 let body = {
-    "service_id": 17
+    "service_id": 14
 }
 
 fetch(url, {
@@ -129,7 +177,31 @@ fetch(url, {
 <p>Example response (200):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "data": []
+    "data": {
+        "voucher_status": 1,
+        "code": "Q0OMN1UUMBGK",
+        "user": {
+            "first_name": "Mikayla",
+            "last_name": "Christy",
+            "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/14.jpg"
+        },
+        "service": {
+            "image": "https:\/\/lorempixel.com\/640\/480\/?70205",
+            "title": "Alice waited patiently until it chose.",
+            "description": "Beatae sunt natus nihil quaerat commodi repellat. Et quos qui sunt velit. Natus debitis ut qui.",
+            "fee_int": 10800,
+            "max_amount": 1000,
+            "discount_int": 10,
+            "created_at": "2020-04-04 19:16:35",
+            "company": {
+                "first_name": "Toy",
+                "last_name": "Antone",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/27.jpg",
+                "company_name": "Heller and Sons",
+                "company_address": "70491 Dora Forest Apt. 215\nWest Kaylee, AR 21578-6761"
+            }
+        }
+    }
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/client/vouchers</code></p>
@@ -182,7 +254,31 @@ fetch(url, {
 <p>Example response (200):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "data": []
+    "data": {
+        "voucher_status": 0,
+        "code": "M4JCHTSZCRVO",
+        "user": {
+            "first_name": "Demarcus",
+            "last_name": "Rubye",
+            "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/57.jpg"
+        },
+        "service": {
+            "image": "https:\/\/lorempixel.com\/640\/480\/?70205",
+            "title": "Alice waited patiently until it chose.",
+            "description": "Beatae sunt natus nihil quaerat commodi repellat. Et quos qui sunt velit. Natus debitis ut qui.",
+            "fee_int": 10800,
+            "max_amount": 1000,
+            "discount_int": 10,
+            "created_at": "2020-04-04 19:16:35",
+            "company": {
+                "first_name": "Toy",
+                "last_name": "Antone",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/27.jpg",
+                "company_name": "Heller and Sons",
+                "company_address": "70491 Dora Forest Apt. 215\nWest Kaylee, AR 21578-6761"
+            }
+        }
+    }
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/client/vouchers/{voucher_id}</code></p>
@@ -233,7 +329,31 @@ fetch(url, {
 <p>Example response (200):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "data": []
+    "data": {
+        "voucher_status": 1,
+        "code": "A7RNTOHIKTR0",
+        "user": {
+            "first_name": "Laurianne",
+            "last_name": "Aliyah",
+            "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/19.jpg"
+        },
+        "service": {
+            "image": "https:\/\/lorempixel.com\/640\/480\/?67881",
+            "title": "QUITE as much use in waiting by the.",
+            "description": "Delectus odio qui perferendis et. Omnis qui vero nesciunt quia. Nemo est omnis architecto quis aut.",
+            "fee_int": 11500,
+            "max_amount": 600,
+            "discount_int": 20,
+            "created_at": "2020-04-04 19:16:35",
+            "company": {
+                "first_name": "Henriette",
+                "last_name": "Christ",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/27.jpg",
+                "company_name": "Reinger Inc",
+                "company_address": "8695 Albertha Unions\nLake Keenanport, WY 89769-9953"
+            }
+        }
+    }
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>DELETE api/client/vouchers/{voucher_id}</code></p>
@@ -286,8 +406,22 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-json">{
     "data": [
-        [],
-        []
+        {
+            "image": "https:\/\/lorempixel.com\/640\/480\/?62134",
+            "title": "She hastily put down her anger as well.",
+            "description": "Quam perspiciatis delectus dolores doloribus nihil itaque dolor. Aliquam qui sit placeat quidem accusantium aliquid.",
+            "fee_int": 6200,
+            "max_amount": 200,
+            "discount_int": 5
+        },
+        {
+            "image": "https:\/\/lorempixel.com\/640\/480\/?59382",
+            "title": "ARE you talking to?' said the Lory, as.",
+            "description": "Impedit aut non ea suscipit. Sed iure laborum voluptas vel. Rerum tenetur sit beatae aut et fugiat.",
+            "fee_int": 6900,
+            "max_amount": 200,
+            "discount_int": 15
+        }
     ]
 }</code></pre>
 <h3>HTTP Request</h3>
@@ -300,11 +434,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "/api/company/services/nulla" \
+    -G "/api/company/services/tempora" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "/api/company/services/nulla"
+    "/api/company/services/tempora"
 );
 
 let headers = {
@@ -322,7 +456,14 @@ fetch(url, {
 <p>Example response (200):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "data": []
+    "data": {
+        "image": "https:\/\/lorempixel.com\/640\/480\/?91748",
+        "title": "Hatter: 'as the things between.",
+        "description": "Quia possimus non debitis in. Animi qui asperiores eius quo est beatae incidunt. Debitis earum unde et nesciunt.",
+        "fee_int": 15700,
+        "max_amount": 1000,
+        "discount_int": 15
+    }
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/company/services/{id}</code></p>
@@ -354,7 +495,7 @@ fetch(url, {
     "/api/company/services" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"warning":false,"title":"unde","fee_int":"consequatur","fee_currency":"sed","payment_method":7,"payment_status":15,"payment_details":"quidem","paid_at":"repudiandae"}'
+    -d '{"warning":false,"title":"ut","fee_int":"occaecati","fee_currency":"consequatur","payment_method":2,"payment_status":13,"payment_details":"non","paid_at":"non"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
     "/api/company/services"
@@ -367,13 +508,13 @@ let headers = {
 
 let body = {
     "warning": false,
-    "title": "unde",
-    "fee_int": "consequatur",
-    "fee_currency": "sed",
-    "payment_method": 7,
-    "payment_status": 15,
-    "payment_details": "quidem",
-    "paid_at": "repudiandae"
+    "title": "ut",
+    "fee_int": "occaecati",
+    "fee_currency": "consequatur",
+    "payment_method": 2,
+    "payment_status": 13,
+    "payment_details": "non",
+    "paid_at": "non"
 }
 
 fetch(url, {
@@ -387,7 +528,14 @@ fetch(url, {
 <p>Example response (200):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "data": []
+    "data": {
+        "image": "https:\/\/lorempixel.com\/640\/480\/?71796",
+        "title": "I eat\" is the use of this elegant.",
+        "description": "Nihil in deleniti sint cumque. Eius a dolores molestias id aut officia nihil.",
+        "fee_int": 16100,
+        "max_amount": 400,
+        "discount_int": 5
+    }
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>POST api/company/services</code></p>
@@ -460,13 +608,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "/api/company/services/beatae" \
+    "/api/company/services/id" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"warning":true,"title":"ut","fee_int":"corrupti","fee_currency":"explicabo","payment_method":7,"payment_status":7,"payment_details":"ut","paid_at":"architecto"}'
+    -d '{"warning":false,"title":"alias","fee_int":"dolorem","fee_currency":"dolorem","payment_method":20,"payment_status":8,"payment_details":"vero","paid_at":"aperiam"}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "/api/company/services/beatae"
+    "/api/company/services/id"
 );
 
 let headers = {
@@ -475,14 +623,14 @@ let headers = {
 };
 
 let body = {
-    "warning": true,
-    "title": "ut",
-    "fee_int": "corrupti",
-    "fee_currency": "explicabo",
-    "payment_method": 7,
-    "payment_status": 7,
-    "payment_details": "ut",
-    "paid_at": "architecto"
+    "warning": false,
+    "title": "alias",
+    "fee_int": "dolorem",
+    "fee_currency": "dolorem",
+    "payment_method": 20,
+    "payment_status": 8,
+    "payment_details": "vero",
+    "paid_at": "aperiam"
 }
 
 fetch(url, {
@@ -496,7 +644,14 @@ fetch(url, {
 <p>Example response (200):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "data": []
+    "data": {
+        "image": "https:\/\/lorempixel.com\/640\/480\/?93396",
+        "title": "Alice. 'I mean what I get\" is the.",
+        "description": "Molestias assumenda qui perspiciatis qui illo minus qui. Quia omnis id cumque asperiores.",
+        "fee_int": 7200,
+        "max_amount": 800,
+        "discount_int": 10
+    }
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>PUT api/company/services/{id}</code></p>
@@ -587,11 +742,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "/api/company/services/occaecati" \
+    "/api/company/services/excepturi" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "/api/company/services/occaecati"
+    "/api/company/services/excepturi"
 );
 
 let headers = {
@@ -609,7 +764,14 @@ fetch(url, {
 <p>Example response (200):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "data": []
+    "data": {
+        "image": "https:\/\/lorempixel.com\/640\/480\/?40638",
+        "title": "But I've got to?' (Alice had no very.",
+        "description": "Quas quae exercitationem et consectetur. Iusto eligendi facilis aliquid officia aut. Accusamus et sunt molestias.",
+        "fee_int": 19300,
+        "max_amount": 600,
+        "discount_int": 20
+    }
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>DELETE api/company/services/{id}</code></p>
@@ -662,8 +824,56 @@ fetch(url, {
 </blockquote>
 <pre><code class="language-json">{
     "data": [
-        [],
-        []
+        {
+            "voucher_status": 0,
+            "code": "TTYN1PTEZWNJ",
+            "user": {
+                "first_name": "Clifton",
+                "last_name": "Lexus",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/39.jpg"
+            },
+            "service": {
+                "image": "https:\/\/lorempixel.com\/640\/480\/?51579",
+                "title": "ARE a simpleton.' Alice did not like.",
+                "description": "Veniam possimus nesciunt ut id. Dignissimos fugit sed impedit perferendis. Voluptatum enim eum minima qui autem iste.",
+                "fee_int": 5700,
+                "max_amount": 400,
+                "discount_int": 15,
+                "created_at": "2020-04-04 19:16:35",
+                "company": {
+                    "first_name": "Caleigh",
+                    "last_name": "Eugene",
+                    "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/10.jpg",
+                    "company_name": "Nolan, Koss and Sporer",
+                    "company_address": "386 Hessel Ports Suite 869\nCrooksport, AK 29861"
+                }
+            }
+        },
+        {
+            "voucher_status": 3,
+            "code": "E50QCEG269OG",
+            "user": {
+                "first_name": "Zola",
+                "last_name": "Malvina",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/44.jpg"
+            },
+            "service": {
+                "image": "https:\/\/lorempixel.com\/640\/480\/?70205",
+                "title": "Alice waited patiently until it chose.",
+                "description": "Beatae sunt natus nihil quaerat commodi repellat. Et quos qui sunt velit. Natus debitis ut qui.",
+                "fee_int": 10800,
+                "max_amount": 1000,
+                "discount_int": 10,
+                "created_at": "2020-04-04 19:16:35",
+                "company": {
+                    "first_name": "Toy",
+                    "last_name": "Antone",
+                    "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/27.jpg",
+                    "company_name": "Heller and Sons",
+                    "company_address": "70491 Dora Forest Apt. 215\nWest Kaylee, AR 21578-6761"
+                }
+            }
+        }
     ]
 }</code></pre>
 <h3>HTTP Request</h3>
@@ -676,11 +886,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X GET \
-    -G "/api/company/vouchers/eos" \
+    -G "/api/company/vouchers/alias" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "/api/company/vouchers/eos"
+    "/api/company/vouchers/alias"
 );
 
 let headers = {
@@ -698,7 +908,31 @@ fetch(url, {
 <p>Example response (200):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "data": []
+    "data": {
+        "voucher_status": 3,
+        "code": "5KXJW7YKGKOS",
+        "user": {
+            "first_name": "Toy",
+            "last_name": "Antone",
+            "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/27.jpg"
+        },
+        "service": {
+            "image": "https:\/\/lorempixel.com\/640\/480\/?70205",
+            "title": "Alice waited patiently until it chose.",
+            "description": "Beatae sunt natus nihil quaerat commodi repellat. Et quos qui sunt velit. Natus debitis ut qui.",
+            "fee_int": 10800,
+            "max_amount": 1000,
+            "discount_int": 10,
+            "created_at": "2020-04-04 19:16:35",
+            "company": {
+                "first_name": "Toy",
+                "last_name": "Antone",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/27.jpg",
+                "company_name": "Heller and Sons",
+                "company_address": "70491 Dora Forest Apt. 215\nWest Kaylee, AR 21578-6761"
+            }
+        }
+    }
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>GET api/company/vouchers/{voucher_id}</code></p>
@@ -727,13 +961,13 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X PUT \
-    "/api/company/vouchers/consequuntur" \
+    "/api/company/vouchers/dignissimos" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
     -d '{"voucher_status":12}'
 </code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "/api/company/vouchers/consequuntur"
+    "/api/company/vouchers/dignissimos"
 );
 
 let headers = {
@@ -756,7 +990,31 @@ fetch(url, {
 <p>Example response (200):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "data": []
+    "data": {
+        "voucher_status": 3,
+        "code": "OS8RF23CQLHP",
+        "user": {
+            "first_name": "Toy",
+            "last_name": "Antone",
+            "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/27.jpg"
+        },
+        "service": {
+            "image": "https:\/\/lorempixel.com\/640\/480\/?37120",
+            "title": "They had a little snappishly. 'You're.",
+            "description": "Corporis quibusdam ipsam officiis dolore sit voluptas. Consequuntur illum nesciunt dignissimos nihil.",
+            "fee_int": 13500,
+            "max_amount": 600,
+            "discount_int": 15,
+            "created_at": "2020-04-04 19:16:35",
+            "company": {
+                "first_name": "Clifton",
+                "last_name": "Lexus",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/39.jpg",
+                "company_name": "Collins-Crooks",
+                "company_address": "4524 Konopelski Islands Suite 553\nStantonshire, IN 80267"
+            }
+        }
+    }
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>PUT api/company/vouchers/{voucher_id}</code></p>
@@ -805,11 +1063,11 @@ fetch(url, {
 <p>Example request:</p>
 </blockquote>
 <pre><code class="language-bash">curl -X DELETE \
-    "/api/company/vouchers/eius" \
+    "/api/company/vouchers/consequatur" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"</code></pre>
 <pre><code class="language-javascript">const url = new URL(
-    "/api/company/vouchers/eius"
+    "/api/company/vouchers/consequatur"
 );
 
 let headers = {
@@ -827,7 +1085,31 @@ fetch(url, {
 <p>Example response (200):</p>
 </blockquote>
 <pre><code class="language-json">{
-    "data": []
+    "data": {
+        "voucher_status": 1,
+        "code": "P0UNYQMEUPQV",
+        "user": {
+            "first_name": "Vergie",
+            "last_name": "Katherine",
+            "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/23.jpg"
+        },
+        "service": {
+            "image": "https:\/\/lorempixel.com\/640\/480\/?16441",
+            "title": "Cat. '--so long as it was looking up.",
+            "description": "Dolor voluptatem temporibus et qui cumque totam. Accusamus optio dignissimos eligendi quisquam.",
+            "fee_int": 17200,
+            "max_amount": 400,
+            "discount_int": 10,
+            "created_at": "2020-04-04 19:16:35",
+            "company": {
+                "first_name": "Reuben",
+                "last_name": "Camron",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/28.jpg",
+                "company_name": "Hammes-Koch",
+                "company_address": "47213 Langworth Walks Suite 431\nEast Verdieside, ME 26385"
+            }
+        }
+    }
 }</code></pre>
 <h3>HTTP Request</h3>
 <p><code>DELETE api/company/vouchers/{voucher_id}</code></p>
@@ -1744,7 +2026,7 @@ fetch(url, {
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "1c25821e-cfa7-401e-81d2-44eb89ecb48e",
+        "_postman_id": "e7e9cfd1-85c2-4338-aa75-5d8c02f2a8c1",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -1778,6 +2060,34 @@ fetch(url, {
                             "raw": "[]"
                         },
                         "description": "Get all vouchers",
+                        "response": []
+                    }
+                },
+                {
+                    "name": "store",
+                    "request": {
+                        "url": {
+                            "protocol": "http",
+                            "host": "",
+                            "path": "api\/client\/vouchers",
+                            "query": []
+                        },
+                        "method": "POST",
+                        "header": [
+                            {
+                                "key": "Content-Type",
+                                "value": "application\/json"
+                            },
+                            {
+                                "key": "Accept",
+                                "value": "application\/json"
+                            }
+                        ],
+                        "body": {
+                            "mode": "raw",
+                            "raw": "{\n    \"service_id\": 20\n}"
+                        },
+                        "description": "Store a new voucher",
                         "response": []
                     }
                 },
@@ -1883,7 +2193,7 @@ fetch(url, {
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "aliquam",
+                                    "value": "ipsum",
                                     "description": "integer The ID of the service."
                                 }
                             ]
@@ -1929,7 +2239,7 @@ fetch(url, {
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"warning\": false,\n    \"title\": \"dolorem\",\n    \"fee_int\": \"beatae\",\n    \"fee_currency\": \"corporis\",\n    \"payment_method\": 14,\n    \"payment_status\": 9,\n    \"payment_details\": \"sint\",\n    \"paid_at\": \"eum\"\n}"
+                            "raw": "{\n    \"warning\": true,\n    \"title\": \"non\",\n    \"fee_int\": \"accusamus\",\n    \"fee_currency\": \"saepe\",\n    \"payment_method\": 19,\n    \"payment_status\": 2,\n    \"payment_details\": \"ratione\",\n    \"paid_at\": \"quae\"\n}"
                         },
                         "description": "Store a new service",
                         "response": []
@@ -1947,7 +2257,7 @@ fetch(url, {
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "non",
+                                    "value": "cupiditate",
                                     "description": "integer The ID of the service."
                                 }
                             ]
@@ -1965,7 +2275,7 @@ fetch(url, {
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"warning\": true,\n    \"title\": \"non\",\n    \"fee_int\": \"asperiores\",\n    \"fee_currency\": \"nisi\",\n    \"payment_method\": 13,\n    \"payment_status\": 16,\n    \"payment_details\": \"esse\",\n    \"paid_at\": \"unde\"\n}"
+                            "raw": "{\n    \"warning\": false,\n    \"title\": \"quisquam\",\n    \"fee_int\": \"ipsam\",\n    \"fee_currency\": \"aspernatur\",\n    \"payment_method\": 17,\n    \"payment_status\": 19,\n    \"payment_details\": \"et\",\n    \"paid_at\": \"odio\"\n}"
                         },
                         "description": "Update category by ID",
                         "response": []
@@ -1983,7 +2293,7 @@ fetch(url, {
                                 {
                                     "id": "id",
                                     "key": "id",
-                                    "value": "hic",
+                                    "value": "placeat",
                                     "description": "integer The ID of the service."
                                 }
                             ]
@@ -2053,7 +2363,7 @@ fetch(url, {
                                 {
                                     "id": "voucher_id",
                                     "key": "voucher_id",
-                                    "value": "adipisci",
+                                    "value": "molestiae",
                                     "description": "integer The ID of the voucher."
                                 }
                             ]
@@ -2089,7 +2399,7 @@ fetch(url, {
                                 {
                                     "id": "voucher_id",
                                     "key": "voucher_id",
-                                    "value": "quos",
+                                    "value": "laborum",
                                     "description": "integer The ID of the voucher."
                                 }
                             ]
@@ -2107,7 +2417,7 @@ fetch(url, {
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"voucher_status\": 15\n}"
+                            "raw": "{\n    \"voucher_status\": 16\n}"
                         },
                         "description": "Update voucher by ID",
                         "response": []
@@ -2125,7 +2435,7 @@ fetch(url, {
                                 {
                                     "id": "voucher_id",
                                     "key": "voucher_id",
-                                    "value": "nihil",
+                                    "value": "voluptatem",
                                     "description": "integer The ID of the voucher."
                                 }
                             ]

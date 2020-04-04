@@ -49,6 +49,10 @@ class Voucher extends ValidModel
         'voucher_status' => StaticArray::VOUCHER_STATUS_PENDING
     ];
 
+    protected $visible = [
+        'code', 'voucher_status', 'service', 'user'
+    ];
+
     protected $fillable = ['code', 'voucher_status', 'service_id', 'user_id'];
     /**
      * The attributes that should be mutated to dates.
@@ -65,11 +69,11 @@ class Voucher extends ValidModel
 
     public function user()
     {
-        return $this->belongsTo('\App\Models\User');
+        return $this->belongsTo('\App\Models\UserSimple', 'user_id');
     }
 
     public function service()
     {
-        return $this->belongsTo('\App\Models\Service');
+        return $this->belongsTo('\App\Models\Service')->with('company');
     }
 }

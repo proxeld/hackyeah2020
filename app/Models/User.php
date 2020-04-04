@@ -80,7 +80,8 @@ class User extends Authenticatable
     use HasApiTokens, Notifiable, HasHashSlug, SoftDeletes;
 
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'password', 'avatar'
+        'first_name', 'last_name', 'email', 'password', 'avatar',
+        'company_name', 'company_address'
     ];
 
     protected $hidden = [

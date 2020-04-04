@@ -51,6 +51,7 @@ class Service extends ValidModel
     // use soft delete instead of permanent delete
     use SoftDeletes;
 
+    protected $visible = ['image', 'title', 'description', 'fee_int', 'max_amount', 'discount_int', 'created_at', 'company'];
 
     protected $fillable = ['image', 'title', 'description', 'fee_int', 'max_amount', 'discount_int'];
 
@@ -64,6 +65,11 @@ class Service extends ValidModel
     public function user()
     {
         return $this->belongsTo('\App\Models\User');
+    }
+
+    public function company()
+    {
+        return $this->belongsTo('\App\Models\UserCompany', 'user_id');
     }
 
     public function vouchers()

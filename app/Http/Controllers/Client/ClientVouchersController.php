@@ -26,8 +26,8 @@ class ClientVouchersController extends RestController
      *
      * Get all vouchers
      *
-     * @transformercollection \App\Transformers\Service\ServiceTransformer
-     * @transformerModel \App\Models\Service
+     * @transformercollection \App\Transformers\Voucher\VoucherTransformer
+     * @transformerModel  \App\Models\Voucher
      *
      * @return LengthAwarePaginator|mixed
      */
@@ -42,8 +42,8 @@ class ClientVouchersController extends RestController
      *
      * Store a new voucher
      *
-     * @transformer \App\Transformers\Service\ServiceTransformer
-     * @transformerModel \App\Models\Service
+     * @transformer \App\Transformers\Voucher\VoucherTransformer
+     * @transformerModel  \App\Models\Voucher
      *
      * @param VoucherRequest $request
      * @return JsonResponse
@@ -76,7 +76,7 @@ class ClientVouchersController extends RestController
      *
      * @urlParam id required integer The ID of the voucher.
      *
-     * @transformer \App\Transformers\Service\ServiceTransformer
+     * @transformer \App\Transformers\Voucher\VoucherTransformer
      *
      * @param $voucher_id int required The id of the voucher. Example: 1
      * @return JsonResponse
@@ -103,7 +103,7 @@ class ClientVouchersController extends RestController
      *
      * @urlParam id required integer The ID of the voucher.
      *
-     * @transformer \App\Transformers\Service\ServiceTransformer
+     * @transformer \App\Transformers\Voucher\VoucherTransformer
      *
      * @param $voucher_id int required The id of the voucher. Example: 1
      * @return JsonResponse

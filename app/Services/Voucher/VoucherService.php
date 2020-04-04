@@ -18,11 +18,12 @@ class VoucherService
 
     /**
      * @param User $client
+     * @param bool $query
      * @return Voucher|Voucher[]|\Illuminate\Database\Eloquent\Builder|\Illuminate\Database\Eloquent\Collection
      */
     public static function index_client(User $client, $query = false)
     {
-        $data = Voucher::whereUserId($client->id);
+        $data = Voucher::with('service')->where('user_id', $client->id);
         if ($query) {
             return $data;
         }
@@ -33,11 +34,11 @@ class VoucherService
     /**
      * @param User $admin
      * @param bool $query
-     * @return Builder|Collection|Voucher
+     * @return Voucher|\Illuminate\Database\Eloquent\Builder|Builder|Collection
      */
     public static function index_company(User $admin, $query = false)
     {
-        $data = Voucher::whereIn('service_id', ServiceService::get_user_services($admin)->pluck('id'));
+        $data = Voucher::with('user')->whereIn('service_id', ServiceService::get_user_services($admin)->pluck('id'));
         if ($query) {
             return $data;
         }
@@ -74,7 +75,7 @@ class VoucherService
     /**
      * @return string
      */
-    protected static function create_unique_code()
+    public static function create_unique_code()
     {
         $code = strtoupper(Str::random(12));
         if (Voucher::whereCode($code)->exists()) {
