@@ -52,7 +52,7 @@ class ClientVouchersController extends RestController
     {
         try {
             $data = $request->validated();
-            $model = VoucherService::store(Auth::user(), $data);
+            $model = VoucherService::store_for_client(Auth::user(), $data);
             return $this->json_success($this->get_voucher_with_details($model));
         } catch (WebException $e) {
             $details = $e->getDetails();

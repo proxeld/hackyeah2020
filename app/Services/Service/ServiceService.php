@@ -17,12 +17,13 @@ class ServiceService
      */
     public static function check_limit(Service $service)
     {
-        if ($service->vouchers()->where('voucher_status', StaticArray::VOUCHER_STATUS_USED)->count() >= $service->max_amount) {
+        if ($service->max_voucher_numbers && $service->vouchers()->where('voucher_status', StaticArray::VOUCHER_STATUS_USED)->count() >= $service->max_voucher_numbers) {
             throw new WebException('Limit reached');
         }
     }
 
     /**
+     * @param User $user
      * @return Service[]|Collection
      */
     public static function get_user_services(User $user)

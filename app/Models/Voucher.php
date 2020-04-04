@@ -39,6 +39,12 @@ use Illuminate\Support\Carbon;
  * @method static Builder|Voucher withoutTrashed()
  * @mixin Eloquent
  * @property int $voucher_status
+ * @property int $voucher_receiver_kind
+ * @property int|null $voucher_receiver_email
+ * @property int|null $voucher_receiver_name
+ * @method static \Illuminate\Database\Eloquent\Builder|Voucher whereVoucherReceiverEmail($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Voucher whereVoucherReceiverKind($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Voucher whereVoucherReceiverName($value)
  */
 class Voucher extends ValidModel
 {
@@ -46,14 +52,22 @@ class Voucher extends ValidModel
     use SoftDeletes;
 
     protected $attributes = [
-        'voucher_status' => StaticArray::VOUCHER_STATUS_PENDING
+        'voucher_status' => StaticArray::VOUCHER_STATUS_PENDING,
+        'voucher_receiver_kind' => StaticArray::VOUCHER_RECEIVER_KIND_GUEST,
+        'voucher_receiver_email' => null,
+        'voucher_receiver_name' => null,
     ];
 
     protected $visible = [
-        'id', 'code', 'voucher_status', 'service', 'user'
+        'id', 'code', 'voucher_status', 'service', 'user',
+        'voucher_receiver_kind', 'voucher_receiver_email', 'voucher_receiver_name'
     ];
 
-    protected $fillable = ['code', 'voucher_status', 'service_id', 'user_id'];
+    protected $fillable = [
+        'code', 'voucher_status', 'service_id', 'user_id',
+        'voucher_receiver_kind', 'voucher_receiver_email',
+        'voucher_receiver_name'
+    ];
     /**
      * The attributes that should be mutated to dates.
      *

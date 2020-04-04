@@ -46,12 +46,46 @@ class VoucherService
     }
 
     /**
+     * @param $data
+     * @return Voucher
+     * @throws WebException
+     */
+    public static function store_for_guest($data)
+    {
+        $data = array_merge($data,
+            [
+                'voucher_receiver_kind' => StaticArray::VOUCHER_RECEIVER_KIND_GUEST,
+                'user_id' => null
+            ]
+        );
+        return self::store($data);
+    }
+
+    /**
      * @param User $user
      * @param $data
      * @return Voucher
      * @throws WebException
      */
-    public static function store(User $user, $data)
+    public static function store_for_client(User $user, $data)
+    {
+        $data = array_merge($data,
+            [
+                'voucher_receiver_kind' => StaticArray::VOUCHER_RECEIVER_KIND_CLIENT,
+                'voucher_receiver_email' => null,
+                'voucher_receiver_name' => null,
+                'user_id' => $user->id
+            ]
+        );
+        return self::store($data);
+    }
+
+    /**
+     * @param $data
+     * @return Voucher
+     * @throws WebException
+     */
+    protected static function store($data)
     {
         $voucher = new Voucher();
         $voucher->fill($data);
@@ -62,15 +96,13 @@ class VoucherService
         if (!$service) {
             throw new WebException('Wrong Service');
         }
-
         ServiceService::check_limit($service);
-
         $voucher->voucher_status = StaticArray::VOUCHER_STATUS_PENDING;
-        $voucher->user_id = $user->id;
         $voucher->code = self::create_unique_code();
         $voucher->save();
         return $voucher;
     }
+
 
     /**
      * @return string

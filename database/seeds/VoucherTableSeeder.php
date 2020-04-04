@@ -12,7 +12,7 @@ class VoucherTableSeeder extends Seeder
      */
     public function run()
     {
-        for ($k = 0; $k < 50; $k++) {
+        for ($k = 0; $k < 150; $k++) {
             factory(Voucher::class)->create();
         }
     }

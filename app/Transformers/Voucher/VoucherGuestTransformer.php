@@ -6,10 +6,10 @@ use App\Models\Voucher;
 use League\Fractal\TransformerAbstract;
 
 /**
- * Class VoucherTransformer
+ * Class VoucherGuestTransformer
  * @package App\Transformers\Service
  */
-class VoucherTransformer extends TransformerAbstract
+class VoucherGuestTransformer extends TransformerAbstract
 {
     private $fileSystem;
 
@@ -27,8 +27,10 @@ class VoucherTransformer extends TransformerAbstract
      */
     public function transform(Voucher $model)
     {
+        $model->setHidden([
+            'user'
+        ]);
         $data = $model->toArray();
-        $data['user'] = $model->user;
         $data['service'] = $model->service;
         return $data;
     }
