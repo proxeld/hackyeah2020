@@ -8,6 +8,8 @@ use App\Http\Requests\ServiceRequest;
 use App\Models\Service;
 use App\Services\Service\ServiceService;
 use App\Transformers\Service\ServiceTransformer;
+use App\Transformers\Service\ServiceVoucherStatisticsTransformer;
+use Auth;
 use Exception;
 use Illuminate\Contracts\Pagination\LengthAwarePaginator;
 use Illuminate\Http\JsonResponse;
@@ -33,7 +35,7 @@ class CompanyServicesController extends RestController
      */
     public function index()
     {
-        return $this->json_success(ServiceService::index());
+        return $this->json_success(ServiceService::index_company(Auth::user()));
     }
 
 
@@ -61,31 +63,42 @@ class CompanyServicesController extends RestController
         }
     }
 
-    /**
-     * @param Service $service
-     * @return array
-     */
-    protected function get_service_with_details(Service $service)
-    {
-        return (new ServiceTransformer())->transform($service);
-    }
 
     /**
      * get
      *
      * Get service by ID
      *
-     * @urlParam id required integer The ID of the service.
+     * @urlParam service_id required integer The ID of the service.
      *
      * @transformer \App\Transformers\Service\ServiceTransformer
      *
-     * @param $id int required The id of the service. Example: 1
+     * @param $service_id int required The id of the service. Example: 1
      * @return JsonResponse
      */
-    public function show($id)
+    public function show($service_id)
     {
-        $model = Service::findOrFail($id);
-        return $this->json_success($this->get_service_with_details($model));
+        $service = self::check_service_access_for_company($service_id);
+        return $this->json_success($this->get_service_with_details($service));
+    }
+
+    /**
+     * voucher_statistics
+     *
+     * Get statistics for vouchers
+     *
+     * @urlParam service_id required integer The ID of the service.
+     *
+     * @transformer \App\Transformers\Service\FakeServiceVoucherStatisticsTransformer
+     * @transformerModel \App\Models\Service
+     *
+     * @param $service_id int required The id of the service. Example: 1
+     * @return JsonResponse
+     */
+    public function voucher_statistics($service_id)
+    {
+        $service = self::check_service_access_for_company($service_id);
+        return $this->json_success(self::get_voucher_statistics($service));
     }
 
     /**
@@ -93,17 +106,17 @@ class CompanyServicesController extends RestController
      *
      * Update category by ID
      *
-     * @urlParam id required integer The ID of the service.
+     * @urlParam service_id required integer The ID of the service.
      *
      * @transformer \App\Transformers\Service\ServiceTransformer
      *
      * @param ServiceRequest $request
-     * @param $id int required The id of the service. Example: 1
+     * @param $service_id int required The id of the service. Example: 1
      * @return JsonResponse
      */
-    public function update(ServiceRequest $request, $id)
+    public function update(ServiceRequest $request, $service_id)
     {
-        $service = Service::findOrFail($id);
+        $service = self::check_service_access_for_company($service_id);
         $data = $request->validated();
         try {
             $service = ServiceService::update($service, $data);
@@ -118,16 +131,16 @@ class CompanyServicesController extends RestController
      *
      * Remove service by ID
      *
-     * @urlParam id required integer The ID of the service.
+     * @urlParam $service_id required integer The ID of the service.
      *
      * @transformer \App\Transformers\Service\ServiceTransformer
      *
      * @param $id int required The id of the service. Example: 1
      * @return JsonResponse
      */
-    public function delete($id)
+    public function delete($service_id)
     {
-        $service = Service::findOrFail($id);
+        $service = self::check_service_access_for_company($service_id);
         try {
             $service->delete();
         } catch (Exception $e) {
@@ -136,4 +149,32 @@ class CompanyServicesController extends RestController
         return $this->json_success($this->get_service_with_details($service));
     }
 
+
+    /**
+     * @param $service_id
+     * @return Service
+     */
+    protected static function check_service_access_for_company($service_id)
+    {
+        return Service::whereUserId(Auth::id())->findOrFail($service_id);
+    }
+
+    /**
+     * @param Service $service
+     * @return array
+     */
+    protected function get_service_with_details(Service $service)
+    {
+        return (new ServiceTransformer())->transform($service);
+    }
+
+
+    /**
+     * @param Service $service
+     * @return array
+     */
+    protected function get_voucher_statistics(Service $service)
+    {
+        return (new ServiceVoucherStatisticsTransformer())->transform($service);
+    }
 }

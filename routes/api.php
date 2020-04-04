@@ -28,13 +28,10 @@ Route::group(['middleware' => ['auth:api']], function () {
     });
 });
 
-Route::group(['prefix' => 'api'], function () {
+Route::group(['prefix' => 'guest'], function () {
 
-    Route::group(['prefix' => 'guest'], function () {
-
-        Route::prefix('vouchers')
-            ->group(base_path('routes/guest/vouchers.php'));
-    });
+    Route::prefix('vouchers')
+        ->group(base_path('routes/guest/vouchers.php'));
 });
 
 /**

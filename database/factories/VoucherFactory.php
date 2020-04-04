@@ -7,6 +7,7 @@ use App\Models\User;
 use App\Models\Voucher;
 use App\Services\Common\StaticArray;
 use App\Services\Voucher\VoucherService;
+use Carbon\Carbon;
 use Faker\Generator as Faker;
 use Illuminate\Database\Eloquent\Factory;
 
@@ -23,5 +24,6 @@ $factory->define(Voucher::class, function (Faker $faker) {
         'user_id' => $user ? $user->id : null,
         'voucher_receiver_email' => $user ? null : $faker->email,
         'voucher_receiver_name' => $user ? null : $faker->name,
+        'created_at' => Carbon::now()->subDays(random_int(1, 10))->toDateTimeString(),
     ];
 });

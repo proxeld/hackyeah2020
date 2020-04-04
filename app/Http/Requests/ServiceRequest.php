@@ -5,14 +5,13 @@ namespace App\Http\Requests;
 use Illuminate\Foundation\Http\FormRequest;
 
 /**
- * @bodyParam warning boolean If true return errors if credits are lower than payment value
+ *
  * @bodyParam title string(min:1,max:255) Payment Title
- * @bodyParam fee_int big-integer required Publishing fee.
- * @bodyParam fee_currency string required Currency for fee (max:3, min:3).
- * @bodyParam payment_method integer required <a target="_blank" href="/documentation/payment-methods">Payment Method</a>
- * @bodyParam payment_status integer required <a target="_blank" href="/documentation/payment-status">Payment Status</a>
- * @bodyParam payment_details string(min:1,max:255) Payment Details
- * @bodyParam paid_at data Date of a payment
+ * @bodyParam description text(max:2000) Description/Message.
+ * @bodyParam image string(min:1,max:255) Path to image
+ * @bodyParam fee_int integer required Fee.
+ * @bodyParam max_voucher_numbers integer nullable Max numbers of available vouchers.
+ * @bodyParam discount_int integer required Fee.
  *
  */
 class ServiceRequest extends FormRequest
@@ -35,10 +34,17 @@ class ServiceRequest extends FormRequest
     public function rules()
     {
         return [
-            'warning' => [
-                'nullable'
-            ],
             'title' => [
+                'nullable',
+                'max:255',
+                'min:1'
+            ],
+            'description' => [
+                'string',
+                'nullable',
+                'max:2000'
+            ],
+            'image' => [
                 'nullable',
                 'max:255',
                 'min:1'
@@ -47,28 +53,14 @@ class ServiceRequest extends FormRequest
                 'required',
                 'integer'
             ],
-            'fee_currency' => [
-                'required',
-                'max:3',
-                'min:3',
+            'max_voucher_numbers' => [
+                'nullable',
+                'integer',
             ],
-            'payment_method' => [
-                'required',
+            'discount_int' => [
+                'nullable',
                 'integer'
             ],
-            'payment_status' => [
-                'required',
-                'integer'
-            ],
-            'payment_details' => [
-                'nullable',
-                'max:255',
-                'min:1'
-            ],
-            'paid_at' => [
-                'nullable',
-                'date'
-            ]
         ];
     }
 }
