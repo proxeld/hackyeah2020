@@ -10,4 +10,5 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
 
 @tailwind utilities;
 
-@import 'utilities/animations'
+@import 'utilities/animations';
+@import "common/common";

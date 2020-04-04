@@ -12,7 +12,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Styles -->
-    @env('prodution')
+    @env('production')
       <link href="{{ mix('app.css') }}" rel="stylesheet" />
     @endenv
 
@@ -26,7 +26,7 @@
 
   </div>
 
-  @env('prodution')
+  @env('production')
   <script charset="utf8" src="{{ mix('app.js') }}"></script>
   <script charset="utf8" src="{{ mix('vendors~app.js') }}"></script>
   @endenv
