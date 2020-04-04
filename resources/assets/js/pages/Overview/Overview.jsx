@@ -2,9 +2,8 @@ import Helmet from 'react-helmet'
 import React, { Fragment } from 'react'
 import { connect } from 'react-redux'
 
-import { NeutralButton } from 'components'
 import { currentUserSelector } from 'store/selectors/session'
-import { Link } from "react-router-dom";
+import { VouchersTable } from '../../components/VouchersTable/VouchersTable';
 
 const OverviewComponent = ({props}) => {
   return (
@@ -13,14 +12,12 @@ const OverviewComponent = ({props}) => {
         <title>Dashboard</title>
       </Helmet>
 
-      <h2 className="text-center mb-5">Hello!</h2>
-
-      <div className="mt-4 text-center">
-        <Link to="/settings/user">
-          <NeutralButton>
-            Go to settings
-          </NeutralButton>
-        </Link>
+      <div className="container mt-5">
+        <div className="row">
+          <div className="col-12">
+            <VouchersTable/>
+          </div>
+        </div>
       </div>
     </Fragment>
   )
