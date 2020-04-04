@@ -1,9 +1,9 @@
 import React from 'react'
 
 const textInputClasses =
-  'block w-full border border-grey-light bg-grey-lightest rounded'
+  'form-control'
 
-export const TextInput = ({ className = '', ...props }) => (
+export const TextInput = ({className = '', ...props}) => (
   <input
     {...props}
     type="text"
@@ -11,7 +11,7 @@ export const TextInput = ({ className = '', ...props }) => (
   />
 )
 
-export const PasswordInput = ({ className = '', ...props }) => (
+export const PasswordInput = ({className = '', ...props}) => (
   <input
     {...props}
     type="password"
@@ -19,9 +19,55 @@ export const PasswordInput = ({ className = '', ...props }) => (
   />
 )
 
-export const TextArea = ({ className = '', ...props }) => (
+export const TextArea = ({className = '', ...props}) => (
   <textarea
     {...props}
     className={`${textInputClasses} h-48 p-2 ${className}`}
   />
 )
+
+export const ShieldTextInput =
+  ({
+     field,
+     form: {touched, errors, submitCount} = {},
+     ...props
+   }) => {
+    const showError = touched && errors[field.name]
+
+    return (
+      <div className="input-group">
+        <input
+          placeholder={props.placeholder}
+          {...field}
+          type="text"
+          className={`form-control`}
+        />
+        <div
+          className={`error invalid-feedback ${showError ? 'd-block' : ''}`}
+        >{errors[field.name]}</div>
+      </div>
+    )
+  }
+
+export const ShieldPasswordInput =
+  ({
+     field,
+     form: {touched, errors, submitCount} = {},
+     ...props
+   }) => {
+    const showError = touched && errors[field.name]
+
+    return (
+      <div className="input-group">
+        <input
+          placeholder={props.placeholder}
+          {...field}
+          type="password"
+          className={`form-control`}
+        />
+        <div
+          className={`error invalid-feedback ${showError ? 'd-block' : ''}`}
+        >{errors[field.name]}</div>
+      </div>
+    )
+  }

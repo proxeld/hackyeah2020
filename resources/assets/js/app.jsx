@@ -7,6 +7,7 @@ import { AuthGuard, FlashMessageRoot } from 'components'
 import { history } from 'utils/history'
 import { store } from 'store/create-store'
 import { DashboardLayout, FormPageLayout } from 'layouts'
+import { ShieldFormPageLayout } from './layouts/FormPage';
 
 const LogIn = lazy(() => import('pages/LogIn/LogIn'))
 const SignUp = lazy(() => import('pages/SignUp/SignUp'))
@@ -46,27 +47,27 @@ export const App = () => (
               exact
               path="/login"
               render={() => (
-                <FormPageLayout title="Log In">
+                <ShieldFormPageLayout title="Log In">
                   <LogIn />
-                </FormPageLayout>
+                </ShieldFormPageLayout>
               )}
             />
             <Route
               exact
               path="/signup"
               render={() => (
-                <FormPageLayout title="Sign Up">
+                <ShieldFormPageLayout title="Sign Up">
                   <SignUp />
-                </FormPageLayout>
+                </ShieldFormPageLayout>
               )}
             />
             <Route
               exact
               path="/forgot-password"
               render={() => (
-                <FormPageLayout title="Forgot Password">
+                <ShieldFormPageLayout title="Forgot Password">
                   <ForgotPassword />
-                </FormPageLayout>
+                </ShieldFormPageLayout>
               )}
             />
             <Route

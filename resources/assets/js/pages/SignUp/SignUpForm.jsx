@@ -5,6 +5,7 @@ import { Formik, Form, Field } from 'formik'
 import { linkStyle } from 'constants/styles'
 import { email as emailRegex } from 'constants/regexes'
 import { PasswordFormLine, TextFormLine, NeutralButton } from 'components'
+import { ShieldPasswordInput, ShieldTextInput } from '../../components/Forms/Inputs';
 
 const validate = (values = {}) => {
   let errors = {}
@@ -30,45 +31,69 @@ const validate = (values = {}) => {
   return errors
 }
 
-export const SignUpForm = ({ onSubmit }) => (
+export const SignUpForm = ({onSubmit}) => (
   <Formik
     validate={validate}
     onSubmit={onSubmit}
-    initialValues={{ first_name: '', last_name: '', email: '', password: '' }}
+    initialValues={{first_name: '', last_name: '', email: '', password: ''}}
   >
     {() => (
       <Form>
-        <Field
-          component={TextFormLine}
-          type="text"
-          name="first_name"
-          labelText="First Name"
-        />
-        <Field
-          component={TextFormLine}
-          type="text"
-          name="last_name"
-          labelText="Last Name"
-        />
-        <Field
-          component={TextFormLine}
-          type="text"
-          name="email"
-          labelText="Email"
-        />
-        <Field
-          component={PasswordFormLine}
-          type="password"
-          name="password"
-          labelText="Password"
-        />
-        <div className="flex items-center">
-          <Link className={linkStyle} to="/login">
-            Or Login
-          </Link>
-          <NeutralButton className="ml-auto" type="submit">
-            Sign Up
-          </NeutralButton>
+        <div className="kt-login__signup">
+          <div className="kt-login__head">
+            <h3 className="kt-login__title">Sign Up</h3>
+            <div className="kt-login__desc">Enter your details to create your account:</div>
+          </div>
+          <div className="kt-form">
+            <Field
+              component={ShieldTextInput}
+              type="text"
+              name="first_name"
+              placeholder="First Name"
+            />
+            <Field
+              component={ShieldTextInput}
+              type="text"
+              name="last_name"
+              placeholder="Last Name"
+            />
+            <Field
+              component={ShieldTextInput}
+              type="text"
+              name="email"
+              placeholder="Email"
+            />
+            <Field
+              component={ShieldPasswordInput}
+              type="password"
+              name="password"
+              placeholder="Password"
+            />
+            <div className="row kt-login__extra">
+              <div className="col kt-align-left">
+                <label className="kt-checkbox">
+                  <input type="checkbox" name="agree"/>I Agree the
+                  <a href="#" className="kt-link kt-login__link kt-font-bold">&nbsp;terms and conditions</a>.
+                  <span></span>
+                </label>
+                <span className="form-text text-muted"></span>
+              </div>
+            </div>
+            <div className="kt-login__actions">
+              <button
+                className="btn btn-brand btn-elevate kt-login__btn-primary"
+                type="submit"
+              >
+                Sign Up
+              </button>
+              &nbsp;&nbsp;
+              <Link to="/login">
+                <button id="kt_login_signup_cancel" className="btn btn-light btn-elevate kt-login__btn-secondary">
+                  Cancel
+                </button>
+              </Link>
+            </div>
+          </div>
         </div>
       </Form>
     )}
