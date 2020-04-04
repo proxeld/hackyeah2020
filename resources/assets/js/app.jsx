@@ -46,9 +46,7 @@ export const App = () => (
               exact
               path="/login"
               render={() => (
-                <FormPageLayout title="Log In">
                   <LogIn />
-                </FormPageLayout>
               )}
             />
             <Route

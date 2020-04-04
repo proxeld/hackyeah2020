@@ -1,7 +1,7 @@
 import React from 'react'
 
 const textInputClasses =
-  'block w-full border border-grey-light bg-grey-lightest rounded'
+  'form-control'
 
 export const TextInput = ({ className = '', ...props }) => (
   <input
