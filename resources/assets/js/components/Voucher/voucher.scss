@@ -1,0 +1,25 @@
+.voucher {
+  background: #e0e4ea;
+  -webkit-box-shadow: 10px 10px 20px 1px rgba(0,0,0,0.56);
+  -moz-box-shadow: 10px 10px 20px 1px rgba(0,0,0,0.56);
+  box-shadow: 10px 10px 20px 1px rgba(0,0,0,0.56);
+
+  .voucher-inner {
+    border: 2px solid black;
+
+    .left-side {
+      .voucher-fancy-text {
+        font-size: 7rem;
+        line-height: 7rem;
+      }
+    }
+
+    .right-side:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      height: 100%;
+      border: 2px solid black;
+    }
+  }
+}
