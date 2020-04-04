@@ -1,6 +1,7 @@
 import React from 'react'
 
 import { Card, CardContent } from 'components'
+import logo from '../../img/logo.png'
 
 export const FormPageLayout = props => (
   <Card className="max-w-md mt-20 mx-auto">
@@ -22,8 +23,7 @@ export const ShieldFormPageLayout = props => (
           <div className="kt-login__container">
             <div className="kt-login__logo">
               <a href="#">
-                <img src="../../../img/shield.png" alt="shield" className="img-fluid"
-                     style={{maxWidth: '200px'}}/>
+                <img src={logo} alt="Shield Logo" className="img-fluid" />
               </a>
             </div>
             {props.children}

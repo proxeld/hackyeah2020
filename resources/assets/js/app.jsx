@@ -65,9 +65,9 @@ export const App = () => (
               exact
               path="/forgot-password"
               render={() => (
-                <FormPageLayout title="Forgot Password">
+                <ShieldFormPageLayout title="Forgot Password">
                   <ForgotPassword />
-                </FormPageLayout>
+                </ShieldFormPageLayout>
               )}
             />
             <Route
