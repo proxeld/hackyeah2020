@@ -50,7 +50,7 @@ class Voucher extends ValidModel
     ];
 
     protected $visible = [
-        'id', 'code', 'voucher_status', 'service', 'user'
+        'id', 'code', 'voucher_status', 'service', 'user', 'user_id'
     ];
 
     protected $fillable = ['code', 'voucher_status', 'service_id', 'user_id'];
