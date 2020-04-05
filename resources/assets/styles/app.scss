@@ -8,3 +8,66 @@ input[type='text'], input[type='email'], input[type='password'], textarea {
 
 @import 'utilities/animations';
 @import "common/common";
+
+
+.logo {
+  flex-shrink: 0;
+}
+
+.logo img {
+  height: 48px;
+
+  @media (max-width: 768px) {
+    height: 32px;
+  }
+}
+
+body {
+  background: #8a8a8a;
+  border-bottom: 1px solid lightgray;
+}
+
+.header {
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background: white;
+}
+
+.top-menu {
+  font-size: 16px;
+  margin: 0;
+  list-style-type: none;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  
+  @media (max-width: 768px) {
+    padding-left: 10px;
+  }
+}
+
+.top-menu li {
+  margin: 0 12px;
+
+  @media (max-width: 768px) {
+    margin: 0 6px;
+  }
+}
+
+.top-menu li a {
+  color: black;
+}
+
+.top-menu li a:hover {
+  text-decoration: underline;
+}
+
+.kt-footer__logo img {
+  height: 32px;
+}
+
+.kt-wrapper {
+  min-height: 100vh;
+}
