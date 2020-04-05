@@ -166,13 +166,7 @@ class VouchersTableExtended extends Component {
     const {vouchers} = this.props
     const {form, modalVisible, modalDeleteVisible} = this.state
 
-    const actions = (<div className="kt-portlet__head-actions">
-      <a href="#" className="btn btn-outline-brand btn-bold btn-sm">
-        Create
-      </a>
-    </div>)
-
-    return (<DashboardPortlet actions={actions} title="Vouchery">
+    return (<DashboardPortlet title="Vouchery">
       <ModalVouchers
         visible={modalVisible}
         handleClose={this.closeModal}

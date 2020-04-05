@@ -15,7 +15,7 @@ const UserSettingsComponent = ({
                                }) => {
   return (
     <Fragment>
-      <h3 className="text-grey-darkest font-normal">Moje Ustawienia</h3>
+      <h3 className="text-grey-darkest font-normal">Moje Dane do Weryfikacji Profilu</h3>
       <UserSettingsForm
         className="mb-4"
         onSubmit={saveUserSettings}

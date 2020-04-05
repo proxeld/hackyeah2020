@@ -1,17 +1,17 @@
 import Helmet from 'react-helmet'
 import React, {Fragment} from 'react'
-import {getCompanyById} from "../../services/api/companies";
-import useAsync from "../../hooks/useAsync";
-import formatPrice from "../../utils/formatPrice";
-import ShowLoadingOrRender from "../../components/ShowLoadingOrRender";
-import {Link} from "react-router-dom";
+import {getCompanyById} from '../../services/api/companies'
+import useAsync from '../../hooks/useAsync'
+import formatPrice from '../../utils/formatPrice'
+import ShowLoadingOrRender from '../../components/ShowLoadingOrRender'
+import {Link} from 'react-router-dom'
 
 const CompanyProfile = ({match}) => {
-  const {params: {id}} = match;
+  const {params: {id}} = match
 
-  const getCompanyByIdCurried = React.useCallback(() => getCompanyById(id), [id]);
+  const getCompanyByIdCurried = React.useCallback(() => getCompanyById(id), [id])
 
-  const {pending: companyPending, value: company} = useAsync(getCompanyByIdCurried);
+  const {pending: companyPending, value: company} = useAsync(getCompanyByIdCurried)
 
   function getDiscountedFee(service) {
     return service.fee_int * (1 - service.discount_int / 100.0)
@@ -23,13 +23,11 @@ const CompanyProfile = ({match}) => {
         <title>Profil firmy</title>
       </Helmet>
 
-
-
       <ShowLoadingOrRender
         pending={companyPending}
         render={() => (
-          <>
-            <div className="kt-grid__item kt-app__toggle kt-app__aside" id="kt_user_profile_aside">
+          <div className="kt-grid__item kt-app__toggle kt-app__aside" id="kt_user_profile_aside">
+            <div className="kt-grid kt-grid--desktop kt-grid--ver kt-grid--ver-desktop kt-app">
               <div className="kt-portlet kt-portlet--height-fluid-">
                 <div className="kt-portlet__head kt-portlet__head--noborder">
                   <div className="kt-portlet__head-label">
@@ -75,7 +73,8 @@ const CompanyProfile = ({match}) => {
                     </div>
 
                     <div className="kt-widget__footer">
-                      <a href={`mailto:${company.email}`} className="btn btn-label-success btn-lg btn-upper">write message</a>
+                      <a href={`mailto:${company.email}`} className="btn btn-label-success btn-lg btn-upper">write
+                        message</a>
                     </div>
                   </div>
 
@@ -116,8 +115,10 @@ const CompanyProfile = ({match}) => {
                               <div className="kt-widget5__stats">
                                 <span className="kt-widget5__sales">Cena dla pomocników</span>
                                 <span className="kt-widget5__number price-old">{formatPrice(service.fee_int)}</span>
-                                <span className="kt-widget5__number price-new">{formatPrice(getDiscountedFee(service))}</span>
-                                <Link to={`/company/${company.id}/service/${service.id}`} className="btn btn-primary">Zamów</Link>
+                                <span
+                                  className="kt-widget5__number price-new">{formatPrice(getDiscountedFee(service))}</span>
+                                <Link to={`/company/${company.id}/service/${service.id}`}
+                                      className="btn btn-primary">Zamów</Link>
                               </div>
                             </div>
                           </div>
@@ -128,7 +129,7 @@ const CompanyProfile = ({match}) => {
                 </div>
               </div>
             </div>
-          </>
+          </div>
         )}
       />
     </Fragment>

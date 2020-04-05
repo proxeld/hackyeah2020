@@ -69,6 +69,8 @@ class UserCompany extends User
 {
     protected $table = 'users';
     protected $visible = [
-        'first_name', 'last_name', 'avatar', 'company_name', 'company_description', 'company_address'
+        'first_name', 'last_name', 'avatar',
+        'company_name', 'company_description', 'company_address',
+        'bank_account_number', 'bank_title', 'verification_video_url'
     ];
 }

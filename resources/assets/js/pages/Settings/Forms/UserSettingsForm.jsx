@@ -26,11 +26,11 @@ const validate = (values = {}) => {
 }
 
 const UserSettingsFormComponent = ({
-  user,
-  onSubmit,
-  className = '',
-  avatarUploadHandler
-}) => (
+                                     user,
+                                     onSubmit,
+                                     className = '',
+                                     avatarUploadHandler
+                                   }) => (
   <Formik
     validate={validate}
     onSubmit={onSubmit}
@@ -47,17 +47,53 @@ const UserSettingsFormComponent = ({
             className="mr-10"
           />
           <div className="flex-grow">
-            <Field
-              name="first_name"
-              component={TextFormLine}
-              labelText="First Name"
-            />
-            <Field
-              name="last_name"
-              component={TextFormLine}
-              labelText="Last Name"
-            />
-            <Field name="email" component={TextFormLine} labelText="Email" />
+            <div className="row">
+              <div className="col-md-6">
+                <Field name="email" component={TextFormLine} labelText="Email"/>
+                <Field
+                  name="first_name"
+                  component={TextFormLine}
+                  labelText="Imię"
+                />
+                <Field
+                  name="last_name"
+                  component={TextFormLine}
+                  labelText="Nazwisko"
+                />
+                <Field
+                  name="verification_video_url"
+                  component={TextFormLine}
+                  labelText="Link do Video na youtube.com"
+                />
+              </div>
+              <div className="col-md-6">
+                <Field
+                  name="company_name"
+                  component={TextFormLine}
+                  labelText="Nazwa Firmy"
+                />
+                <Field
+                  name="company_description"
+                  component={TextFormLine}
+                  labelText="Opis Firmy"
+                />
+                <Field
+                  name="company_nip"
+                  component={TextFormLine}
+                  labelText="NIP/REGON"
+                />
+                <Field
+                  name="bank_account_number"
+                  component={TextFormLine}
+                  labelText="Numer Konta Bankowego"
+                />
+                <Field
+                  name="bank_account_number"
+                  component={TextFormLine}
+                  labelText="Numer Konta Bankowego"
+                />
+              </div>
+            </div>
           </div>
         </div>
 
@@ -73,7 +109,7 @@ const UserSettingsFormComponent = ({
 
 export const UserSettingsForm = connect(state => {
   const {
-    session: { currentUser }
+    session: {currentUser}
   } = state
   return {
     user: state.entities.users[currentUser]
