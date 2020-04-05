@@ -165,7 +165,7 @@ return [
         App\Providers\ResponseMacroServiceProvider::class,
         App\Providers\RepositoryServiceProvider::class,
         // App\Providers\BroadcastServiceProvider::class,
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
+//        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
 
     ],
 
