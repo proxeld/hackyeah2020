@@ -3,11 +3,11 @@ import React, {lazy, Suspense} from 'react'
 import {ModalProvider} from 'react-context-modals'
 import {Link, Route, Router, Switch} from 'react-router-dom'
 
-import { AuthGuard, FlashMessageRoot } from 'components'
-import { history } from 'utils/history'
-import { store } from 'store/create-store'
-import { FormPageLayout } from 'layouts'
-import { ShieldFormPageLayout } from './layouts/FormPage'
+import {AuthGuard, FlashMessageRoot} from 'components'
+import {history} from 'utils/history'
+import {store} from 'store/create-store'
+import {FormPageLayout} from 'layouts'
+import {ShieldFormPageLayout} from './layouts/FormPage'
 import CompanyProfile from './pages/CompanyProfile/CompanyProfile'
 import ClientSiteLayout from './layouts/ClientSite/ClientSite'
 import ServiceOrder from './pages/ServiceOrder/ServiceOrder'
@@ -19,6 +19,7 @@ const NotFound = lazy(() => import('pages/NotFound/NotFound'))
 const SettingsRoutes = lazy(() => import('pages/Settings/SettingsRoutes'))
 const PasswordReset = lazy(() => import('pages/PasswordReset/PasswordReset'))
 const ForgotPassword = lazy(() => import('pages/ForgotPassword/ForgotPassword'))
+const ServicesPage = lazy(() => import('pages/Services/Services'))
 
 const withDashboard = (ContentComponent, {pageName, actions} = {}) => {
   return props => (
@@ -47,6 +48,19 @@ const OverviewWithDashboard = withDashboard(Overview, {
     </div>
   )
 })
+
+const ServicesPageWithDashboard = withDashboard(ServicesPage, {
+  pageName: 'Moje Usługi',
+  actions: (
+    <div>
+      <Link to="/" className="btn btn-danger kt-subheader__btn-options" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+        Moje Vouchery
+      </Link>
+    </div>
+  )
+})
+
 const SettingsWithDashboard = withDashboard(SettingsRoutes, {
   pageName: 'Ustawienia'
 })
@@ -100,23 +114,24 @@ export const App = () => (
               exact
               path="/company/:id"
               render={({match}) => (
-               <ClientSiteLayout>
-                 <CompanyProfile match={match} />
-               </ClientSiteLayout>
+                <ClientSiteLayout>
+                  <CompanyProfile match={match}/>
+                </ClientSiteLayout>
               )}
             />
             <Route
               exact
               path="/company/:companyId/service/:serviceId"
               render={({match}) => (
-               <ClientSiteLayout>
-                 <ServiceOrder match={match} />
-               </ClientSiteLayout>
+                <ClientSiteLayout>
+                  <ServiceOrder match={match}/>
+                </ClientSiteLayout>
               )}
             />
 
             {/* Dashboard routes */}
             <Route exact path="/" component={OverviewWithDashboard}/>
+            <Route exact path="/services" component={ServicesPageWithDashboard}/>
             <Route path="/settings" component={SettingsWithDashboard}/>
             {/* 404 route */}
             <Route path="*" exact={true} render={() => <NotFound/>}/>
