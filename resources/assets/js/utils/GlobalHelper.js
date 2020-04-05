@@ -8,6 +8,7 @@ import {
   LAST_WEEK,
   THIS_YEAR
 } from './GlobalConfig'
+import {Map} from 'immutable'
 
 export const checkNotNull = (el) => {
   return el !== '' && el !== null && el !== undefined
@@ -19,44 +20,93 @@ export const getNotNull = (value) => {
 
 export const filterEntries = (entries, filter, config = {}) => {
   const {dateField = 'date'} = config
+  let filteredEntries = entries
+  let start, end
+
+  const format = 'YYYY-MM-DD'
 
   if (filter.kind === 'year') {
-    return entries.filter((entry) => entry.get(dateField).format('YYYY') === filter.value)
+    start = moment().endOf('year')
+    end = moment().startOf('year')
+    filteredEntries = entries.filter((entry) => entry.get(dateField).format('YYYY') === filter.value)
+  } else {
+    switch (filter.value) {
+      case ALL_TIME: {
+        end = moment().format(format)
+        filteredEntries = entries.filter((entry) => entry.get(dateField) <= end)
+        break
+      }
+      case THIS_YEAR: {
+        filteredEntries = entries.filter((entry) => moment(entry.get(dateField)).format('YYYY') === moment().format('YYYY'))
+        break
+      }
+      case LAST_12_MONTHS: {
+        end = moment().format(format)
+        start = moment().subtract(12, 'months').format(format)
+        filteredEntries = entries.filter((entry) => entry.get(dateField) <= end && entry.get(dateField) >= start)
+        break
+      }
+      case LAST_3_MONTHS: {
+        end = moment().format(format)
+        start = moment().subtract(3, 'months').format(format)
+        filteredEntries = entries.filter((entry) => entry.get(dateField) <= end && entry.get(dateField) >= start)
+        break
+      }
+      case CURRENT_MONTH: {
+        end = moment().format(format)
+        start = moment().startOf('month').format(format)
+        filteredEntries = entries.filter((entry) => entry.get(dateField) <= end && entry.get(dateField) >= start)
+        break
+      }
+      case LAST_WEEK: {
+        end = moment().startOf('week').subtract(1, 'minute').format(format)
+        start = moment().startOf('week').subtract(1, 'week').format(format)
+        filteredEntries = entries.filter((entry) => entry.get(dateField) <= end && entry.get(dateField) >= start)
+        break
+      }
+      case CURRENT_WEEK: {
+        end = moment().format(format)
+        start = moment().startOf('week').format(format)
+        filteredEntries = entries.filter((entry) => entry.get(dateField) <= end && entry.get(dateField) >= start)
+        break
+      }
+    }
   }
 
-  switch (filter.value) {
-    case ALL_TIME: {
-      const start = moment()
-      return entries.filter((entry) => entry.get(dateField) <= start)
-    }
-    case THIS_YEAR: {
-      return entries.filter((entry) => entry.get(dateField).format('YYYY') === moment().format('YYYY'))
-    }
-    case LAST_12_MONTHS: {
-      const start = moment()
-      const end = moment().subtract(12, 'months')
-      return entries.filter((entry) => entry.get(dateField) <= start && entry.get(dateField) >= end)
-    }
-    case LAST_3_MONTHS: {
-      const start = moment()
-      const end = moment().subtract(3, 'months')
-      return entries.filter((entry) => entry.get(dateField) <= start && entry.get(dateField) >= end)
-    }
-    case CURRENT_MONTH: {
-      const start = moment()
-      const end = moment().startOf('month')
-      return entries.filter((entry) => entry.get(dateField) <= start && entry.get(dateField) >= end)
-    }
-    case LAST_WEEK: {
-      const start = moment()
-      const end = moment().startOf('week').subtract(1, 'week')
-      return entries.filter((entry) => entry.get(dateField) <= start && entry.get(dateField) >= end)
-    }
-    case CURRENT_WEEK: {
-      const start = moment()
-      const end = moment().startOf('week')
-      return entries.filter((entry) => entry.get(dateField) <= start && entry.get(dateField) >= end)
-    }
+  return {
+    filteredEntries,
+    start,
+    end
   }
-  return entries
+}
+
+export const fixValidatorErrors = (errors) => {
+  let errorsFixed = Map()
+  Map(errors).get('items').map((error) => (errorsFixed = errorsFixed.set(error.field, [error.msg])))
+  return errorsFixed
+}
+
+export const validateURL = (str) => {
+  let res = str ? str.match(/(http(s)?:\/\/.)?(www\.)?[-a-zA-Z0-9@:%._+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_+.~#?&/=]*)/g) : null
+  return res != null || str === 'http://localhost:3000' || str === 'http://localhost:8000'
+}
+
+export const fixNumber = (value, fixed = 2, minus = false) => {
+  value = fixDigits(value)
+  return (value < 0 && minus ? '-' : '') + parseFloat(value.replace(/[^0-9.]/gi, '')).toFixed(fixed)
+}
+
+const fixDigits = (value) => {
+  if (value === undefined || value === null) {
+    return ''
+  }
+  if (!(typeof value === 'string' || value instanceof String)) {
+    value = value.toString()
+  }
+  return value
+}
+
+export const formatNumber = (value) => {
+  value = fixDigits(value)
+  return value.replace(/\B(?=(\d{3})+(?!\d))/g, ',')
 }

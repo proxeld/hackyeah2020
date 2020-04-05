@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { AppHeader, AppFooter } from 'components'
+import {AppFooter, AppHeader} from 'components'
 
 export const DashboardLayout = props => (
   <div>
-    <AppHeader />
-    <div className="max-w-2xl mx-auto mt-10 px-4">{props.children}</div>
-    <AppFooter />
+    <AppHeader/>
+    <div className="kt-container  kt-grid__item kt-grid__item--fluid">{props.children}</div>
+    <AppFooter/>
   </div>
 )

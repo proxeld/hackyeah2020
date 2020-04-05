@@ -1,24 +1,24 @@
 import React from 'react'
 import axios from 'axios'
-import { connect } from 'react-redux'
-import { Link } from 'react-router-dom'
+import {connect} from 'react-redux'
+import {Link} from 'react-router-dom'
 
-import { history } from 'utils/history'
-import { sessionActions } from 'store/actions'
-import { currentUserSelector } from 'store/selectors/session'
+import {history} from 'utils/history'
+import {sessionActions} from 'store/actions'
+import {currentUserSelector} from 'store/selectors/session'
 import defaultProfileImage from 'default-profile-picture.jpeg'
 
 export const UserCardComponent = ({
-  user,
-  colorTheme,
-  className = '',
-  logOut
-}) => {
+                                    user,
+                                    colorTheme,
+                                    className = '',
+                                    logOut
+                                  }) => {
   if (!user) {
     return null
   }
 
-  const { first_name: firstName, last_name: lastName, avatar } = user
+  const {first_name: firstName, last_name: lastName, avatar} = user
 
   const fullName =
     lastName !== undefined ? [firstName, lastName].join(' ') : firstName
@@ -29,6 +29,7 @@ export const UserCardComponent = ({
   return (
     <div className={`flex items-center ${className} ${themeTextClass}`}>
       <img
+        alt="avatar"
         src={avatar || defaultProfileImage}
         className="w-10 h-10 rounded-full mr-4"
       />
@@ -41,12 +42,12 @@ export const UserCardComponent = ({
               className={`${themeTextClass} underline cursor-pointer`}
               onClick={logOut}
             >
-              Logout
+              Wyloguj
             </span>
           </li>
           <li className="inline-block">
             <Link className={`${themeTextClass}`} to="/settings/user">
-              Settings
+              Ustawienia
             </Link>
           </li>
         </ul>
@@ -63,7 +64,7 @@ export const UserCard = connect(
     logOut: async () => {
       await axios.get('/api/logout')
 
-      dispatch({ type: sessionActions.LOGOUT })
+      dispatch({type: sessionActions.LOGOUT})
 
       history.push('/login')
     }

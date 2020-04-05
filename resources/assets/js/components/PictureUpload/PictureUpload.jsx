@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { DragOverlay } from 'components'
+import {DragOverlay} from 'components'
 
 import './PictureUpload.scss'
 import defaultProfileImage from 'default-profile-picture.jpeg'
@@ -23,7 +23,7 @@ export class PictureUpload extends React.Component {
   async handleDrop(e) {
     e.preventDefault()
 
-    const { uploadHandler } = this.props
+    const {uploadHandler} = this.props
 
     if (uploadHandler) {
       let fileData = new FormData()
@@ -31,7 +31,7 @@ export class PictureUpload extends React.Component {
       await uploadHandler(fileData)
     }
 
-    this.setState({ isHovering: false })
+    this.setState({isHovering: false})
   }
 
   async handleFileUpload(e) {
@@ -41,7 +41,7 @@ export class PictureUpload extends React.Component {
       return false
     }
 
-    const { uploadHandler } = this.props
+    const {uploadHandler} = this.props
 
     let fileData = new FormData()
     fileData.append('avatar', e.target.files[0])
@@ -49,17 +49,17 @@ export class PictureUpload extends React.Component {
   }
 
   toggleHover() {
-    this.setState({ isHovering: !this.state.isHovering })
+    this.setState({isHovering: !this.state.isHovering})
 
     return false
   }
 
   render() {
     const {
-      field: { name, value },
+      field: {name, value},
       className = ''
     } = this.props
-    const { isHovering } = this.state
+    const {isHovering} = this.state
 
     const currentImage = value || defaultProfileImage
 
@@ -89,7 +89,7 @@ export class PictureUpload extends React.Component {
             />
           </div>
           <span className="block text-grey text-sm">
-            Drag or click to update your profile picture
+            Przeciągnij albo kliknij aby zaktualizować <br/>swoje zdjęcie profilowe
           </span>
         </DragOverlay>
         <input

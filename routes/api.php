@@ -19,6 +19,10 @@ Route::group(['middleware' => ['auth:api']], function () {
 
         Route::prefix('services')
             ->group(base_path('routes/company/services.php'));
+
+        Route::prefix('finances')
+            ->group(base_path('routes/company/finances.php'));
+
     });
 
     Route::group(['middleware' => ['client'], 'prefix' => 'client'], function () {

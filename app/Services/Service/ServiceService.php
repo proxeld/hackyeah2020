@@ -49,7 +49,6 @@ class ServiceService
             ->values()->all();
     }
 
-
     /**
      * @param Service $service
      * @throws WebException

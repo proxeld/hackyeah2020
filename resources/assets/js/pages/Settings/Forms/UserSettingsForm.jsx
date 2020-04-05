@@ -1,9 +1,9 @@
 import React from 'react'
-import { connect } from 'react-redux'
-import { Formik, Form, Field } from 'formik'
+import {connect} from 'react-redux'
+import {Field, Form, Formik} from 'formik'
 
-import { email as emailRegex } from 'constants/regexes'
-import { PositiveButton, TextFormLine, PictureUpload } from 'components'
+import {email as emailRegex} from 'constants/regexes'
+import {PictureUpload, PositiveButton, TextFormLine} from 'components'
 
 const validate = (values = {}) => {
   let errors = {}
@@ -63,7 +63,7 @@ const UserSettingsFormComponent = ({
 
         <div className="flex border-grey-light">
           <PositiveButton type="submit" className="ml-auto">
-            Save User Details
+            Zapisz Dane
           </PositiveButton>
         </div>
       </Form>

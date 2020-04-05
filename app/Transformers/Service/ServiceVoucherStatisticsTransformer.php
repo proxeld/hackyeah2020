@@ -8,7 +8,7 @@ use League\Fractal\TransformerAbstract;
 
 /**
  * Class ServiceVoucherStatisticsTransformer
- * @package App\Transformers\Finances
+ * @package App\Transformers\Service
  */
 class ServiceVoucherStatisticsTransformer extends TransformerAbstract
 {

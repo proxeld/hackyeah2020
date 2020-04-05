@@ -1,43 +1,39 @@
-import { connect } from 'react-redux'
-import React, { Fragment } from 'react'
+import {connect} from 'react-redux'
+import React, {Fragment} from 'react'
 
-import { userActions } from 'store/actions'
-import { uploadUserAvatar } from 'store/action-creators/avatars'
-import { flashMessage } from 'store/action-creators/flashMessages'
-import { saveUser, changePassword } from 'store/action-creators/user'
+import {userActions} from 'store/actions'
+import {uploadUserAvatar} from 'store/action-creators/avatars'
+import {flashMessage} from 'store/action-creators/flashMessages'
+import {changePassword, saveUser} from 'store/action-creators/user'
 
-import { UserSettingsForm, ChangePasswordForm } from './Forms'
+import {ChangePasswordForm, UserSettingsForm} from './Forms'
 
 const UserSettingsComponent = ({
-  saveUserSettings,
-  avatarUploadHandler,
-  handleChangePassword
-}) => {
+                                 saveUserSettings,
+                                 avatarUploadHandler,
+                                 handleChangePassword
+                               }) => {
   return (
     <Fragment>
-      <h3 className="text-grey-darkest font-normal">Your Details</h3>
+      <h3 className="text-grey-darkest font-normal">Moje Ustawienia</h3>
       <UserSettingsForm
         className="mb-4"
         onSubmit={saveUserSettings}
         avatarUploadHandler={avatarUploadHandler}
       />
 
-      <h3 className="text-grey-darkest font-normal">Change Your Password</h3>
-      <ChangePasswordForm onSubmit={handleChangePassword} />
+      <h3 className="text-grey-darkest font-normal">Zmiana Hasła</h3>
+      <ChangePasswordForm onSubmit={handleChangePassword}/>
     </Fragment>
   )
 }
 
-const userValidationFromResponse = values => {
-  let errors = {}
-
-  return errors
+const userValidationFromResponse = () => {
+  return {}
 }
 
-const passwordValidationFromResponse = values => {
-  let errors = {}
-
-  return errors
+const passwordValidationFromResponse = () => {
+  return {}
 }
 
 const mapStateToProps = state => ({
@@ -45,7 +41,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-  saveUserSettings: async (userData, { setErrors }) => {
+  saveUserSettings: async (userData, {setErrors}) => {
     const response = await dispatch(saveUser(userData))
 
     if (response.status === 400) {
@@ -63,7 +59,7 @@ const mapDispatchToProps = dispatch => ({
   uploadUserAvatar: (fileData, userSlug) =>
     dispatch(uploadUserAvatar(fileData, userSlug)),
 
-  changePassword: async (data, { setErrors }) => {
+  changePassword: async (data, {setErrors}) => {
     try {
       await dispatch(changePassword(data))
       dispatch(

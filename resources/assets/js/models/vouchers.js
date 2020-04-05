@@ -4,3 +4,10 @@ export const VoucherStatusEnum = {
   REFUNDED: 2,
   USED: 3
 }
+
+export const VoucherStatusMap = {
+  [VoucherStatusEnum.PAID]: 'Zapłacony',
+  [VoucherStatusEnum.PENDING]: 'Oczekujący',
+  [VoucherStatusEnum.REFUNDED]: 'Zwrócony',
+  [VoucherStatusEnum.USED]: 'Wykorzystany'
+}

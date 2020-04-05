@@ -9,7 +9,7 @@ use League\Fractal\TransformerAbstract;
 
 /**
  * Class FakeServiceVoucherStatisticsTransformer
- * @package App\Transformers\Finances
+ * @package App\Transformers\Service
  */
 class FakeServiceVoucherStatisticsTransformer extends TransformerAbstract
 {

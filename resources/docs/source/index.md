@@ -66,54 +66,54 @@ fetch(url, {
             "voucher_receiver_kind": 1,
             "voucher_receiver_email": null,
             "voucher_receiver_name": null,
-            "code": "ZQFZCRYMJEFB",
-            "created_at": "2020-03-28 23:17:46",
+            "code": "J1X30ONVIUDU",
+            "created_at": "2020-03-26 01:39:25",
             "user": {
-                "first_name": "Eduardo",
-                "last_name": "Cody",
-                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/5.jpg"
+                "first_name": "Deron",
+                "last_name": "Kaycee",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/13.jpg"
             },
             "service": {
-                "id": 5,
-                "image": "https:\/\/lorempixel.com\/640\/480\/?22207",
-                "title": "Dodo replied very gravely. 'What else.",
-                "description": "Nihil reprehenderit aut laudantium reprehenderit quo. Libero laudantium unde molestiae nemo non illum.",
-                "fee_int": 13800,
-                "max_voucher_numbers": 400,
-                "discount_int": 15,
-                "created_at": "2020-04-04 22:33:08",
+                "id": 17,
+                "image": "https:\/\/lorempixel.com\/640\/480\/?81832",
+                "title": "Come on!' 'Everybody says \"come on!\".",
+                "description": "Quibusdam aperiam rerum eius ea. Est excepturi et et dolores accusamus nulla. Non quaerat nostrum blanditiis sint.",
+                "fee_int": 11600,
+                "max_voucher_numbers": 200,
+                "discount_int": 20,
+                "created_at": "2020-04-04 22:33:35",
                 "company": {
-                    "first_name": "Francisca",
-                    "last_name": "Abraham",
-                    "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/60.jpg",
-                    "company_name": "Nolan, Wisoky and Bernhard",
-                    "company_address": "30325 Hirthe Avenue Apt. 490\nBeverlyshire, TN 56546"
+                    "first_name": "Mitchel",
+                    "last_name": "Leilani",
+                    "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/21.jpg",
+                    "company_name": "Koepp, Jaskolski and Lowe",
+                    "company_address": "75934 Reyes Village\nPort Eusebiomouth, DE 50414"
                 }
             }
         },
         {
-            "voucher_status": 1,
+            "voucher_status": 3,
             "voucher_receiver_kind": 0,
-            "voucher_receiver_email": "feil.alanis@kuphal.com",
-            "voucher_receiver_name": "Justyn Stracke PhD",
-            "code": "D3JHBQPZ7SYW",
-            "created_at": "2020-03-28 23:17:46",
+            "voucher_receiver_email": "gilda96@hotmail.com",
+            "voucher_receiver_name": "Emiliano Streich",
+            "code": "TI07GWAETOZE",
+            "created_at": "2020-03-26 01:39:25",
             "user": null,
             "service": {
-                "id": 5,
-                "image": "https:\/\/lorempixel.com\/640\/480\/?22207",
-                "title": "Dodo replied very gravely. 'What else.",
-                "description": "Nihil reprehenderit aut laudantium reprehenderit quo. Libero laudantium unde molestiae nemo non illum.",
-                "fee_int": 13800,
-                "max_voucher_numbers": 400,
-                "discount_int": 15,
-                "created_at": "2020-04-04 22:33:08",
+                "id": 16,
+                "image": "https:\/\/lorempixel.com\/640\/480\/?71018",
+                "title": "I hadn't gone down that.",
+                "description": "Asperiores ipsa eum ad voluptas. Delectus minima sint cum et. Sed sed aspernatur nulla molestias iure quo rerum.",
+                "fee_int": 20000,
+                "max_voucher_numbers": 1000,
+                "discount_int": 5,
+                "created_at": "2020-04-04 22:33:35",
                 "company": {
-                    "first_name": "Francisca",
-                    "last_name": "Abraham",
-                    "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/60.jpg",
-                    "company_name": "Nolan, Wisoky and Bernhard",
-                    "company_address": "30325 Hirthe Avenue Apt. 490\nBeverlyshire, TN 56546"
+                    "first_name": "Gilbert",
+                    "last_name": "Rod",
+                    "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/26.jpg",
+                    "company_name": "Conroy PLC",
+                    "company_address": "8963 Reinger Hollow Apt. 934\nSouth Chandler, MT 49069"
                 }
             }
         }
@@ -139,7 +139,7 @@ curl -X POST \
     "/api/client/vouchers" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"service_id":17}'
+    -d '{"service_id":9}'
 
 ```
 
@@ -154,7 +154,7 @@ let headers = {
 };
 
 let body = {
-    "service_id": 17
+    "service_id": 9
 }
 
 fetch(url, {
@@ -172,32 +172,28 @@ fetch(url, {
 ```json
 {
     "data": {
-        "voucher_status": 3,
-        "voucher_receiver_kind": 1,
-        "voucher_receiver_email": null,
-        "voucher_receiver_name": null,
-        "code": "WUEI9JHROTAR",
-        "created_at": "2020-04-02 23:17:46",
-        "user": {
-            "first_name": "Konrad",
-            "last_name": "Seweryn",
-            "avatar": "eb96d74a-2e7c-4465-b85a-202a5b35eb83.png"
-        },
+        "voucher_status": 0,
+        "voucher_receiver_kind": 0,
+        "voucher_receiver_email": "bednar.jason@wilderman.com",
+        "voucher_receiver_name": "Yasmeen Willms",
+        "code": "8W3IUYHKLAUQ",
+        "created_at": "2020-03-26 01:39:25",
+        "user": null,
         "service": {
-            "id": 16,
-            "image": "https:\/\/lorempixel.com\/640\/480\/?71018",
-            "title": "I hadn't gone down that.",
-            "description": "Asperiores ipsa eum ad voluptas. Delectus minima sint cum et. Sed sed aspernatur nulla molestias iure quo rerum.",
-            "fee_int": 20000,
-            "max_voucher_numbers": 1000,
-            "discount_int": 5,
-            "created_at": "2020-04-04 22:33:35",
+            "id": 7,
+            "image": "https:\/\/lorempixel.com\/640\/480\/?71439",
+            "title": "Alice replied thoughtfully. 'They have.",
+            "description": "Ab vel ipsa iste. Architecto enim qui unde eaque. Dolores cupiditate et est quas. Ut quod voluptatum ut ut minus.",
+            "fee_int": 14300,
+            "max_voucher_numbers": 600,
+            "discount_int": 15,
+            "created_at": "2020-04-04 22:33:09",
             "company": {
-                "first_name": "Gilbert",
-                "last_name": "Rod",
-                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/26.jpg",
-                "company_name": "Conroy PLC",
-                "company_address": "8963 Reinger Hollow Apt. 934\nSouth Chandler, MT 49069"
+                "first_name": "Eduardo",
+                "last_name": "Cody",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/5.jpg",
+                "company_name": "King, Conn and Glover",
+                "company_address": "95481 Gusikowski Parkway Suite 210\nPort Joaniemouth, NM 26626-9396"
             }
         }
     }
@@ -253,31 +249,27 @@ fetch(url, {
 {
     "data": {
         "voucher_status": 0,
-        "voucher_receiver_kind": 1,
-        "voucher_receiver_email": null,
-        "voucher_receiver_name": null,
-        "code": "NCKN0XBRTZYF",
-        "created_at": "2020-03-28 23:17:46",
-        "user": {
-            "first_name": "Nona",
-            "last_name": "Ashton",
-            "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/49.jpg"
-        },
+        "voucher_receiver_kind": 0,
+        "voucher_receiver_email": "lauryn.swift@yahoo.com",
+        "voucher_receiver_name": "Kurtis Kuhn IV",
+        "code": "EZ7V139G8WBJ",
+        "created_at": "2020-03-31 01:39:25",
+        "user": null,
         "service": {
-            "id": 2,
-            "image": "https:\/\/lorempixel.com\/640\/480\/?34677",
-            "title": "I'll set Dinah at you!' There was no.",
-            "description": "Debitis nostrum quo repellendus in et quos. Sint corporis nobis sapiente asperiores accusantium. Quia et est sit.",
-            "fee_int": 15300,
-            "max_voucher_numbers": 200,
-            "discount_int": 20,
+            "id": 5,
+            "image": "https:\/\/lorempixel.com\/640\/480\/?22207",
+            "title": "Dodo replied very gravely. 'What else.",
+            "description": "Nihil reprehenderit aut laudantium reprehenderit quo. Libero laudantium unde molestiae nemo non illum.",
+            "fee_int": 13800,
+            "max_voucher_numbers": 400,
+            "discount_int": 15,
             "created_at": "2020-04-04 22:33:08",
             "company": {
-                "first_name": "Leila",
-                "last_name": "Shany",
-                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/40.jpg",
-                "company_name": "Welch, Bogan and Ullrich",
-                "company_address": "66910 Kris Walk\nStreichshire, SD 34780-1496"
+                "first_name": "Francisca",
+                "last_name": "Abraham",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/60.jpg",
+                "company_name": "Nolan, Wisoky and Bernhard",
+                "company_address": "30325 Hirthe Avenue Apt. 490\nBeverlyshire, TN 56546"
             }
         }
     }
@@ -333,28 +325,32 @@ fetch(url, {
 ```json
 {
     "data": {
-        "voucher_status": 1,
-        "voucher_receiver_kind": 0,
-        "voucher_receiver_email": "shields.brett@hotmail.com",
-        "voucher_receiver_name": "Delaney Schroeder",
-        "code": "IXXRZ1PHSS3Y",
-        "created_at": "2020-03-30 23:17:46",
-        "user": null,
+        "voucher_status": 0,
+        "voucher_receiver_kind": 1,
+        "voucher_receiver_email": null,
+        "voucher_receiver_name": null,
+        "code": "2FPUHUKWDZQK",
+        "created_at": "2020-03-31 01:39:25",
+        "user": {
+            "first_name": "Leila",
+            "last_name": "Shany",
+            "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/40.jpg"
+        },
         "service": {
-            "id": 4,
-            "image": "https:\/\/lorempixel.com\/640\/480\/?82420",
-            "title": "Lizard's slate-pencil, and the pattern.",
-            "description": "Itaque qui esse eos eos quaerat. Consequatur voluptates quibusdam quia sapiente. Impedit ut et nihil nam.",
-            "fee_int": 13600,
-            "max_voucher_numbers": 600,
-            "discount_int": 15,
+            "id": 3,
+            "image": "https:\/\/lorempixel.com\/640\/480\/?97284",
+            "title": "Pat, what's that in the last words out.",
+            "description": "Quibusdam commodi ut error et ut. Modi aspernatur modi dolore. Eum maiores fugiat maiores eum reprehenderit eligendi.",
+            "fee_int": 15700,
+            "max_voucher_numbers": 800,
+            "discount_int": 20,
             "created_at": "2020-04-04 22:33:08",
             "company": {
-                "first_name": "Elise",
-                "last_name": "Johan",
-                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/52.jpg",
-                "company_name": "Olson, Kuhlman and Rogahn",
-                "company_address": "285 Nestor Walks\nEast Eleazar, DE 01744"
+                "first_name": "Tevin",
+                "last_name": "Maverick",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/57.jpg",
+                "company_name": "Wehner, Tromp and Batz",
+                "company_address": "535 Jaunita Rapids Suite 371\nBorerview, WI 00253"
             }
         }
     }
@@ -371,6 +367,334 @@ Parameter | Status | Description
     `id` |  required  | integer The ID of the voucher.
 
 <!-- END_24c94e2de257e0a1ba5cb398d49ffe11 -->
+
+#company/finances
+
+
+<!-- START_1b5dbf05fb2b9a2690f799580276f2e0 -->
+## vouchers
+
+Get statistics for vouchers
+
+> Example request:
+
+```bash
+curl -X GET \
+    -G "/api/company/finances/vouchers" \
+    -H "Content-Type: application/json" \
+    -H "Accept: application/json"
+```
+
+```javascript
+const url = new URL(
+    "/api/company/finances/vouchers"
+);
+
+let headers = {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+};
+
+fetch(url, {
+    method: "GET",
+    headers: headers,
+})
+    .then(response => response.json())
+    .then(json => console.log(json));
+```
+
+
+> Example response (200):
+
+```json
+{
+    "data": {
+        "voucher_statistics_day": [
+            {
+                "created_at": "2020-03-25",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-25",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-25",
+                "total": 3
+            },
+            {
+                "created_at": "2020-03-25",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-25",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-25",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-25",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-26",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-26",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-26",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-26",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-26",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-27",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-27",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-27",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-27",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-27",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-27",
+                "total": 2
+            },
+            {
+                "created_at": "2020-03-27",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-27",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-27",
+                "total": 2
+            },
+            {
+                "created_at": "2020-03-27",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-28",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-28",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-28",
+                "total": 2
+            },
+            {
+                "created_at": "2020-03-28",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-28",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-28",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-29",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-29",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-29",
+                "total": 2
+            },
+            {
+                "created_at": "2020-03-29",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-29",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-29",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-29",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-30",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-30",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-30",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-30",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-30",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-30",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-30",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-30",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-31",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-31",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-31",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-31",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-31",
+                "total": 2
+            },
+            {
+                "created_at": "2020-03-31",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-31",
+                "total": 1
+            },
+            {
+                "created_at": "2020-04-01",
+                "total": 2
+            },
+            {
+                "created_at": "2020-04-01",
+                "total": 2
+            },
+            {
+                "created_at": "2020-04-01",
+                "total": 2
+            },
+            {
+                "created_at": "2020-04-01",
+                "total": 2
+            },
+            {
+                "created_at": "2020-04-02",
+                "total": 1
+            },
+            {
+                "created_at": "2020-04-02",
+                "total": 3
+            },
+            {
+                "created_at": "2020-04-02",
+                "total": 1
+            },
+            {
+                "created_at": "2020-04-02",
+                "total": 1
+            },
+            {
+                "created_at": "2020-04-02",
+                "total": 1
+            },
+            {
+                "created_at": "2020-04-02",
+                "total": 1
+            },
+            {
+                "created_at": "2020-04-02",
+                "total": 1
+            },
+            {
+                "created_at": "2020-04-03",
+                "total": 2
+            },
+            {
+                "created_at": "2020-04-03",
+                "total": 2
+            }
+        ],
+        "voucher_statistics_kind": [
+            {
+                "voucher_status": 0,
+                "total": 16
+            },
+            {
+                "voucher_status": 1,
+                "total": 17
+            },
+            {
+                "voucher_status": 3,
+                "total": 24
+            },
+            {
+                "voucher_status": 2,
+                "total": 21
+            }
+        ]
+    }
+}
+```
+
+### HTTP Request
+`GET api/company/finances/vouchers`
+
+#### URL Parameters
+
+Parameter | Status | Description
+--------- | ------- | ------- | -------
+    `service_id` |  required  | integer The ID of the service.
+
+<!-- END_1b5dbf05fb2b9a2690f799580276f2e0 -->
 
 #company/services
 
@@ -414,20 +738,20 @@ fetch(url, {
 {
     "data": [
         {
-            "image": "https:\/\/lorempixel.com\/640\/480\/?35676",
-            "title": "Majesty,' said Two, in a great hurry.",
-            "description": "Iusto in et facere eveniet. Aut voluptas itaque ut velit odio. Quae maxime quibusdam soluta porro quod molestiae.",
-            "fee_int": 14700,
-            "max_voucher_numbers": 200,
-            "discount_int": 15
+            "image": "https:\/\/lorempixel.com\/640\/480\/?17837",
+            "title": "All on a little way forwards each time.",
+            "description": "Minima asperiores cum libero qui et a. Dignissimos repellendus suscipit in totam. Itaque vitae id ad quia est est.",
+            "fee_int": 7200,
+            "max_voucher_numbers": 800,
+            "discount_int": 5
         },
         {
-            "image": "https:\/\/lorempixel.com\/640\/480\/?51077",
-            "title": "Alice laughed so much surprised, that.",
-            "description": "Aut alias et nisi laborum sunt. Velit incidunt est ut officia omnis est. Quia voluptatem aut qui in quisquam.",
-            "fee_int": 13000,
+            "image": "https:\/\/lorempixel.com\/640\/480\/?20921",
+            "title": "Alice, that she began fancying the.",
+            "description": "Tenetur veritatis nostrum voluptas qui ut et. Sit dicta minima accusamus enim omnis.",
+            "fee_int": 12400,
             "max_voucher_numbers": 200,
-            "discount_int": 15
+            "discount_int": 20
         }
     ]
 }
@@ -451,7 +775,7 @@ curl -X POST \
     "/api/company/services" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"title":"consectetur","description":"et","image":"harum","fee_int":10,"max_voucher_numbers":3,"discount_int":9}'
+    -d '{"title":"rerum","description":"nemo","image":"enim","fee_int":15,"max_voucher_numbers":4,"discount_int":7}'
 
 ```
 
@@ -466,12 +790,12 @@ let headers = {
 };
 
 let body = {
-    "title": "consectetur",
-    "description": "et",
-    "image": "harum",
-    "fee_int": 10,
-    "max_voucher_numbers": 3,
-    "discount_int": 9
+    "title": "rerum",
+    "description": "nemo",
+    "image": "enim",
+    "fee_int": 15,
+    "max_voucher_numbers": 4,
+    "discount_int": 7
 }
 
 fetch(url, {
@@ -489,11 +813,11 @@ fetch(url, {
 ```json
 {
     "data": {
-        "image": "https:\/\/lorempixel.com\/640\/480\/?33039",
-        "title": "How she longed to get an opportunity.",
-        "description": "Ipsa dicta eos et dolores nobis enim. Sunt cumque voluptatum aut ut.",
-        "fee_int": 10700,
-        "max_voucher_numbers": 400,
+        "image": "https:\/\/lorempixel.com\/640\/480\/?95786",
+        "title": "Bill! I wouldn't say anything about.",
+        "description": "Repellat id eum et sapiente. Laudantium est recusandae aspernatur tempore est doloremque.",
+        "fee_int": 19000,
+        "max_voucher_numbers": 600,
         "discount_int": 15
     }
 }
@@ -523,14 +847,14 @@ Get service by ID
 
 ```bash
 curl -X GET \
-    -G "/api/company/services/incidunt" \
+    -G "/api/company/services/assumenda" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "/api/company/services/incidunt"
+    "/api/company/services/assumenda"
 );
 
 let headers = {
@@ -552,12 +876,12 @@ fetch(url, {
 ```json
 {
     "data": {
-        "image": "https:\/\/lorempixel.com\/640\/480\/?89885",
-        "title": "Queen of Hearts, he stole those tarts.",
-        "description": "Voluptatem cumque placeat ut culpa qui. Hic laboriosam quis et illo molestiae. Aut est perferendis eaque nobis.",
-        "fee_int": 7300,
-        "max_voucher_numbers": 600,
-        "discount_int": 5
+        "image": "https:\/\/lorempixel.com\/640\/480\/?75843",
+        "title": "White Rabbit: it was only the pepper.",
+        "description": "Corrupti quos deserunt est quae. Inventore ducimus et enim sequi eum. Distinctio suscipit non optio.",
+        "fee_int": 9700,
+        "max_voucher_numbers": 200,
+        "discount_int": 15
     }
 }
 ```
@@ -582,14 +906,14 @@ Get statistics for vouchers
 
 ```bash
 curl -X GET \
-    -G "/api/company/services/nulla/voucher-statistics" \
+    -G "/api/company/services/aut/voucher-statistics" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "/api/company/services/nulla/voucher-statistics"
+    "/api/company/services/aut/voucher-statistics"
 );
 
 let headers = {
@@ -612,30 +936,42 @@ fetch(url, {
 {
     "data": {
         "service": {
-            "id": 7,
-            "image": "https:\/\/lorempixel.com\/640\/480\/?71439",
-            "title": "Alice replied thoughtfully. 'They have.",
-            "description": "Ab vel ipsa iste. Architecto enim qui unde eaque. Dolores cupiditate et est quas. Ut quod voluptatum ut ut minus.",
-            "fee_int": 14300,
-            "max_voucher_numbers": 600,
-            "discount_int": 15,
+            "id": 9,
+            "image": "https:\/\/lorempixel.com\/640\/480\/?94932",
+            "title": "Hatter trembled so, that Alice had no.",
+            "description": "Nobis sunt aspernatur ab. Explicabo modi omnis earum eius.",
+            "fee_int": 12100,
+            "max_voucher_numbers": 400,
+            "discount_int": 5,
             "created_at": "2020-04-04 22:33:09"
         },
         "voucher_statistics_day": [
             {
                 "created_at": "2020-03-25",
-                "total": 2
-            },
-            {
-                "created_at": "2020-03-26",
                 "total": 1
             },
             {
-                "created_at": "2020-03-26",
+                "created_at": "2020-03-25",
                 "total": 1
             },
             {
                 "created_at": "2020-03-27",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-27",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-27",
+                "total": 1
+            },
+            {
+                "created_at": "2020-03-28",
+                "total": 2
+            },
+            {
+                "created_at": "2020-03-28",
                 "total": 1
             },
             {
@@ -647,27 +983,19 @@ fetch(url, {
                 "total": 1
             },
             {
-                "created_at": "2020-03-30",
+                "created_at": "2020-03-29",
                 "total": 1
             },
             {
                 "created_at": "2020-03-30",
-                "total": 1
-            },
-            {
-                "created_at": "2020-03-31",
-                "total": 1
-            },
-            {
-                "created_at": "2020-03-31",
                 "total": 2
             },
             {
-                "created_at": "2020-03-31",
+                "created_at": "2020-03-30",
                 "total": 1
             },
             {
-                "created_at": "2020-03-31",
+                "created_at": "2020-03-30",
                 "total": 2
             },
             {
@@ -675,7 +1003,15 @@ fetch(url, {
                 "total": 2
             },
             {
-                "created_at": "2020-04-02",
+                "created_at": "2020-04-01",
+                "total": 1
+            },
+            {
+                "created_at": "2020-04-01",
+                "total": 1
+            },
+            {
+                "created_at": "2020-04-01",
                 "total": 1
             },
             {
@@ -687,15 +1023,27 @@ fetch(url, {
                 "total": 1
             },
             {
-                "created_at": "2020-04-02",
+                "created_at": "2020-04-03",
                 "total": 1
             },
             {
-                "created_at": "2020-04-02",
+                "created_at": "2020-04-03",
                 "total": 1
             },
             {
-                "created_at": "2020-04-02",
+                "created_at": "2020-04-03",
+                "total": 2
+            },
+            {
+                "created_at": "2020-04-03",
+                "total": 1
+            },
+            {
+                "created_at": "2020-04-03",
+                "total": 1
+            },
+            {
+                "created_at": "2020-04-03",
                 "total": 1
             },
             {
@@ -710,15 +1058,15 @@ fetch(url, {
             },
             {
                 "voucher_status": 1,
-                "total": 8
+                "total": 9
             },
             {
                 "voucher_status": 3,
-                "total": 4
+                "total": 6
             },
             {
                 "voucher_status": 2,
-                "total": 6
+                "total": 10
             }
         ]
     }
@@ -745,16 +1093,16 @@ Update category by ID
 
 ```bash
 curl -X PUT \
-    "/api/company/services/repellendus" \
+    "/api/company/services/reiciendis" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"title":"qui","description":"vel","image":"eligendi","fee_int":20,"max_voucher_numbers":17,"discount_int":2}'
+    -d '{"title":"nobis","description":"voluptate","image":"iusto","fee_int":18,"max_voucher_numbers":18,"discount_int":13}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "/api/company/services/repellendus"
+    "/api/company/services/reiciendis"
 );
 
 let headers = {
@@ -763,12 +1111,12 @@ let headers = {
 };
 
 let body = {
-    "title": "qui",
-    "description": "vel",
-    "image": "eligendi",
-    "fee_int": 20,
-    "max_voucher_numbers": 17,
-    "discount_int": 2
+    "title": "nobis",
+    "description": "voluptate",
+    "image": "iusto",
+    "fee_int": 18,
+    "max_voucher_numbers": 18,
+    "discount_int": 13
 }
 
 fetch(url, {
@@ -786,12 +1134,12 @@ fetch(url, {
 ```json
 {
     "data": {
-        "image": "https:\/\/lorempixel.com\/640\/480\/?56111",
-        "title": "Pray how did you begin?' The Hatter.",
-        "description": "Voluptates deleniti non nostrum. Iusto corrupti sequi magnam voluptates. Nisi quis pariatur quia omnis.",
-        "fee_int": 10500,
-        "max_voucher_numbers": 1000,
-        "discount_int": 20
+        "image": "https:\/\/lorempixel.com\/640\/480\/?40905",
+        "title": "Rabbit whispered in a hurry: a large.",
+        "description": "Blanditiis voluptas nesciunt illo omnis numquam. Vitae animi molestiae tempore omnis maiores.",
+        "fee_int": 6500,
+        "max_voucher_numbers": 200,
+        "discount_int": 15
     }
 }
 ```
@@ -856,12 +1204,12 @@ fetch(url, {
 ```json
 {
     "data": {
-        "image": "https:\/\/lorempixel.com\/640\/480\/?66740",
-        "title": "CAN all that stuff,' the Mock Turtle.",
-        "description": "Blanditiis sed hic natus vitae in iusto ut. In nemo molestiae quidem pariatur. Exercitationem aliquam odio nihil ut.",
-        "fee_int": 9700,
-        "max_voucher_numbers": 1000,
-        "discount_int": 15
+        "image": "https:\/\/lorempixel.com\/640\/480\/?60465",
+        "title": "Queen. 'I never said I didn't!'.",
+        "description": "Ratione modi impedit non. Expedita error corporis debitis harum. Perspiciatis ut animi temporibus quos sit ut vero.",
+        "fee_int": 14100,
+        "max_voucher_numbers": 200,
+        "discount_int": 10
     }
 }
 ```
@@ -919,13 +1267,17 @@ fetch(url, {
 {
     "data": [
         {
-            "voucher_status": 2,
-            "voucher_receiver_kind": 0,
-            "voucher_receiver_email": "garett.boehm@gmail.com",
-            "voucher_receiver_name": "Boris Waelchi",
-            "code": "CWW8SNM5WA7L",
-            "created_at": "2020-03-28 23:17:45",
-            "user": null,
+            "voucher_status": 1,
+            "voucher_receiver_kind": 1,
+            "voucher_receiver_email": null,
+            "voucher_receiver_name": null,
+            "code": "RVOLOWGUCMIR",
+            "created_at": "2020-03-27 01:39:24",
+            "user": {
+                "first_name": "Sister",
+                "last_name": "Kody",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/18.jpg"
+            },
             "service": {
                 "id": 3,
                 "image": "https:\/\/lorempixel.com\/640\/480\/?97284",
@@ -945,28 +1297,32 @@ fetch(url, {
             }
         },
         {
-            "voucher_status": 2,
-            "voucher_receiver_kind": 0,
-            "voucher_receiver_email": "eula79@jacobson.org",
-            "voucher_receiver_name": "Clinton Upton",
-            "code": "OHO07IIXHB2W",
-            "created_at": "2020-04-01 23:17:45",
-            "user": null,
+            "voucher_status": 1,
+            "voucher_receiver_kind": 1,
+            "voucher_receiver_email": null,
+            "voucher_receiver_name": null,
+            "code": "WNVP9BTO8IG7",
+            "created_at": "2020-03-31 01:39:24",
+            "user": {
+                "first_name": "Deron",
+                "last_name": "Kaycee",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/13.jpg"
+            },
             "service": {
-                "id": 4,
-                "image": "https:\/\/lorempixel.com\/640\/480\/?82420",
-                "title": "Lizard's slate-pencil, and the pattern.",
-                "description": "Itaque qui esse eos eos quaerat. Consequatur voluptates quibusdam quia sapiente. Impedit ut et nihil nam.",
-                "fee_int": 13600,
-                "max_voucher_numbers": 600,
-                "discount_int": 15,
-                "created_at": "2020-04-04 22:33:08",
+                "id": 13,
+                "image": "https:\/\/lorempixel.com\/640\/480\/?87902",
+                "title": "YOUR shoes done with?' said the Cat.",
+                "description": "Ipsa eos eius doloremque aut ratione quia. Molestiae sequi architecto odit perspiciatis vitae.",
+                "fee_int": 11600,
+                "max_voucher_numbers": 1000,
+                "discount_int": 5,
+                "created_at": "2020-04-04 22:33:35",
                 "company": {
-                    "first_name": "Elise",
-                    "last_name": "Johan",
-                    "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/52.jpg",
-                    "company_name": "Olson, Kuhlman and Rogahn",
-                    "company_address": "285 Nestor Walks\nEast Eleazar, DE 01744"
+                    "first_name": "Konrad",
+                    "last_name": "Seweryn",
+                    "avatar": "364ef364-9fd9-4580-9f7e-49caf343ca97.png",
+                    "company_name": null,
+                    "company_address": null
                 }
             }
         }
@@ -989,14 +1345,14 @@ Get voucher by ID
 
 ```bash
 curl -X GET \
-    -G "/api/company/vouchers/facere" \
+    -G "/api/company/vouchers/porro" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "/api/company/vouchers/facere"
+    "/api/company/vouchers/porro"
 );
 
 let headers = {
@@ -1018,28 +1374,28 @@ fetch(url, {
 ```json
 {
     "data": {
-        "voucher_status": 2,
+        "voucher_status": 1,
         "voucher_receiver_kind": 0,
-        "voucher_receiver_email": "tmclaughlin@gmail.com",
-        "voucher_receiver_name": "Michelle Glover DVM",
-        "code": "Y5DYNQT2EWN4",
-        "created_at": "2020-04-01 23:17:45",
+        "voucher_receiver_email": "laurianne.shields@hotmail.com",
+        "voucher_receiver_name": "Dr. Antonina Sauer",
+        "code": "MVKVELJAOVMM",
+        "created_at": "2020-03-30 01:39:24",
         "user": null,
         "service": {
-            "id": 7,
-            "image": "https:\/\/lorempixel.com\/640\/480\/?71439",
-            "title": "Alice replied thoughtfully. 'They have.",
-            "description": "Ab vel ipsa iste. Architecto enim qui unde eaque. Dolores cupiditate et est quas. Ut quod voluptatum ut ut minus.",
-            "fee_int": 14300,
-            "max_voucher_numbers": 600,
-            "discount_int": 15,
-            "created_at": "2020-04-04 22:33:09",
+            "id": 19,
+            "image": "https:\/\/lorempixel.com\/640\/480\/?76679",
+            "title": "Queen. First came ten soldiers.",
+            "description": "Quam aut in id. Id quis omnis culpa et accusantium eveniet vero. Eum totam est assumenda unde est consequuntur.",
+            "fee_int": 15600,
+            "max_voucher_numbers": 800,
+            "discount_int": 5,
+            "created_at": "2020-04-04 22:33:35",
             "company": {
-                "first_name": "Eduardo",
-                "last_name": "Cody",
-                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/5.jpg",
-                "company_name": "King, Conn and Glover",
-                "company_address": "95481 Gusikowski Parkway Suite 210\nPort Joaniemouth, NM 26626-9396"
+                "first_name": "Marge",
+                "last_name": "Anderson",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/13.jpg",
+                "company_name": "Johnson and Sons",
+                "company_address": "7639 Waters Radial Apt. 871\nNew Dillanstad, NV 94662"
             }
         }
     }
@@ -1066,16 +1422,16 @@ Update voucher by ID
 
 ```bash
 curl -X PUT \
-    "/api/company/vouchers/quia" \
+    "/api/company/vouchers/ratione" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"voucher_status":4}'
+    -d '{"voucher_status":1}'
 
 ```
 
 ```javascript
 const url = new URL(
-    "/api/company/vouchers/quia"
+    "/api/company/vouchers/ratione"
 );
 
 let headers = {
@@ -1084,7 +1440,7 @@ let headers = {
 };
 
 let body = {
-    "voucher_status": 4
+    "voucher_status": 1
 }
 
 fetch(url, {
@@ -1102,12 +1458,12 @@ fetch(url, {
 ```json
 {
     "data": {
-        "voucher_status": 3,
+        "voucher_status": 0,
         "voucher_receiver_kind": 0,
-        "voucher_receiver_email": "ofarrell@hotmail.com",
-        "voucher_receiver_name": "Dr. Roman Turner Sr.",
-        "code": "E7YMNGK7OFA4",
-        "created_at": "2020-03-29 23:17:45",
+        "voucher_receiver_email": "otis59@hotmail.com",
+        "voucher_receiver_name": "Leta Quitzon",
+        "code": "PT9L7LIRXNU4",
+        "created_at": "2020-04-04 01:39:24",
         "user": null,
         "service": {
             "id": 19,
@@ -1156,14 +1512,14 @@ Remove voucher by ID
 
 ```bash
 curl -X DELETE \
-    "/api/company/vouchers/consequuntur" \
+    "/api/company/vouchers/amet" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json"
 ```
 
 ```javascript
 const url = new URL(
-    "/api/company/vouchers/consequuntur"
+    "/api/company/vouchers/amet"
 );
 
 let headers = {
@@ -1185,28 +1541,28 @@ fetch(url, {
 ```json
 {
     "data": {
-        "voucher_status": 0,
+        "voucher_status": 2,
         "voucher_receiver_kind": 0,
-        "voucher_receiver_email": "fschroeder@jast.biz",
-        "voucher_receiver_name": "Prof. Lexus Zemlak IV",
-        "code": "TIE0I8E3X8FW",
-        "created_at": "2020-03-28 23:17:46",
+        "voucher_receiver_email": "jedediah.stiedemann@gmail.com",
+        "voucher_receiver_name": "Dr. Bennie Bailey",
+        "code": "GVVNJ1DLVRPV",
+        "created_at": "2020-04-03 01:39:24",
         "user": null,
         "service": {
-            "id": 1,
-            "image": "https:\/\/lorempixel.com\/640\/480\/?10455",
-            "title": "CHAPTER VIII. The Queen's argument.",
-            "description": "Consequatur porro amet recusandae error. A dolorem eos ullam ex.",
-            "fee_int": 16000,
-            "max_voucher_numbers": 400,
+            "id": 20,
+            "image": "https:\/\/lorempixel.com\/640\/480\/?54877",
+            "title": "But said I didn't!' interrupted Alice.",
+            "description": "Et corrupti vel libero at. Sit architecto quis aut sit suscipit aut.",
+            "fee_int": 5000,
+            "max_voucher_numbers": 800,
             "discount_int": 15,
-            "created_at": "2020-04-04 22:33:08",
+            "created_at": "2020-04-04 22:33:35",
             "company": {
-                "first_name": "Neha",
-                "last_name": "Milton",
-                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/52.jpg",
-                "company_name": "Torp PLC",
-                "company_address": "8582 Rowe Well\nEast Raphael, PA 06835-6168"
+                "first_name": "Deron",
+                "last_name": "Kaycee",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/13.jpg",
+                "company_name": "Bergstrom PLC",
+                "company_address": "1802 Clementine Square\nSouth Jessetown, DE 02035-7528"
             }
         }
     }
@@ -2455,7 +2811,7 @@ fetch(url, {
     "variables": [],
     "info": {
         "name": "Laravel API",
-        "_postman_id": "08c91a0e-c991-4396-8132-6aa494444e0f",
+        "_postman_id": "ea581e3a-b9fd-49ee-a003-de53087f3155",
         "description": "",
         "schema": "https:\/\/schema.getpostman.com\/json\/collection\/v2.0.0\/collection.json"
     },
@@ -2514,7 +2870,7 @@ fetch(url, {
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"service_id\": 4\n}"
+                            "raw": "{\n    \"service_id\": 17\n}"
                         },
                         "description": "Store a new voucher",
                         "response": []
@@ -2632,7 +2988,7 @@ fetch(url, {
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"title\": \"autem\",\n    \"description\": \"repellat\",\n    \"image\": \"aliquam\",\n    \"fee_int\": 4,\n    \"max_voucher_numbers\": 4,\n    \"discount_int\": 18\n}"
+                            "raw": "{\n    \"title\": \"consectetur\",\n    \"description\": \"et\",\n    \"image\": \"harum\",\n    \"fee_int\": 10,\n    \"max_voucher_numbers\": 3,\n    \"discount_int\": 9\n}"
                         },
                         "description": "Store a new service",
                         "response": []
@@ -2650,7 +3006,7 @@ fetch(url, {
                                 {
                                     "id": "service_id",
                                     "key": "service_id",
-                                    "value": "aliquid",
+                                    "value": "incidunt",
                                     "description": "integer The ID of the service."
                                 }
                             ]
@@ -2686,7 +3042,7 @@ fetch(url, {
                                 {
                                     "id": "service_id",
                                     "key": "service_id",
-                                    "value": "animi",
+                                    "value": "nulla",
                                     "description": "integer The ID of the service."
                                 }
                             ]
@@ -2722,7 +3078,7 @@ fetch(url, {
                                 {
                                     "id": "service_id",
                                     "key": "service_id",
-                                    "value": "exercitationem",
+                                    "value": "repellendus",
                                     "description": "integer The ID of the service."
                                 }
                             ]
@@ -2740,7 +3096,7 @@ fetch(url, {
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"title\": \"dolorum\",\n    \"description\": \"sint\",\n    \"image\": \"qui\",\n    \"fee_int\": 2,\n    \"max_voucher_numbers\": 11,\n    \"discount_int\": 17\n}"
+                            "raw": "{\n    \"title\": \"qui\",\n    \"description\": \"vel\",\n    \"image\": \"eligendi\",\n    \"fee_int\": 20,\n    \"max_voucher_numbers\": 17,\n    \"discount_int\": 2\n}"
                         },
                         "description": "Update category by ID",
                         "response": []
@@ -2820,7 +3176,7 @@ fetch(url, {
                                 {
                                     "id": "voucher_id",
                                     "key": "voucher_id",
-                                    "value": "explicabo",
+                                    "value": "facere",
                                     "description": "integer The ID of the voucher."
                                 }
                             ]
@@ -2856,7 +3212,7 @@ fetch(url, {
                                 {
                                     "id": "voucher_id",
                                     "key": "voucher_id",
-                                    "value": "impedit",
+                                    "value": "quia",
                                     "description": "integer The ID of the voucher."
                                 }
                             ]
@@ -2874,7 +3230,7 @@ fetch(url, {
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"voucher_status\": 17\n}"
+                            "raw": "{\n    \"voucher_status\": 4\n}"
                         },
                         "description": "Update voucher by ID",
                         "response": []
@@ -2892,7 +3248,7 @@ fetch(url, {
                                 {
                                     "id": "voucher_id",
                                     "key": "voucher_id",
-                                    "value": "incidunt",
+                                    "value": "consequuntur",
                                     "description": "integer The ID of the voucher."
                                 }
                             ]
@@ -3908,7 +4264,7 @@ fetch(url, {
                         ],
                         "body": {
                             "mode": "raw",
-                            "raw": "{\n    \"voucher_receiver_name\": \"ea\",\n    \"voucher_receiver_email\": \"aut\",\n    \"service_id\": 18\n}"
+                            "raw": "{\n    \"voucher_receiver_name\": \"asperiores\",\n    \"voucher_receiver_email\": \"velit\",\n    \"service_id\": 13\n}"
                         },
                         "description": "Store a new voucher",
                         "response": []
@@ -4051,12 +4407,12 @@ fetch(url, {
 ```json
 {
     "data": {
-        "first_name": "Elian",
-        "last_name": "Kristofer",
-        "email": "block.gabrielle@gulgowski.com",
-        "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/48.jpg",
-        "company_address": "80963 Marques Shoal Apt. 289\nNew Ulices, MD 40223-4329",
-        "company_name": "Zulauf-Nicolas",
+        "first_name": "Willa",
+        "last_name": "Lolita",
+        "email": "jovan16@hansen.com",
+        "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/50.jpg",
+        "company_address": "732 Alexanne Summit Apt. 119\nWymanfurt, AZ 95573-3529",
+        "company_name": "Turner PLC",
         "services": []
     }
 }
@@ -4088,7 +4444,7 @@ curl -X POST \
     "/api/guest/vouchers" \
     -H "Content-Type: application/json" \
     -H "Accept: application/json" \
-    -d '{"voucher_receiver_name":"asperiores","voucher_receiver_email":"velit","service_id":13}'
+    -d '{"voucher_receiver_name":"earum","voucher_receiver_email":"non","service_id":20}'
 
 ```
 
@@ -4103,9 +4459,9 @@ let headers = {
 };
 
 let body = {
-    "voucher_receiver_name": "asperiores",
-    "voucher_receiver_email": "velit",
-    "service_id": 13
+    "voucher_receiver_name": "earum",
+    "voucher_receiver_email": "non",
+    "service_id": 20
 }
 
 fetch(url, {
@@ -4123,27 +4479,27 @@ fetch(url, {
 ```json
 {
     "data": {
-        "voucher_status": 0,
-        "voucher_receiver_kind": 1,
-        "voucher_receiver_email": null,
-        "voucher_receiver_name": null,
-        "code": "APZABCZB7UVR",
-        "created_at": "2020-03-27 23:17:46",
+        "voucher_status": 2,
+        "voucher_receiver_kind": 0,
+        "voucher_receiver_email": "einar06@johnston.com",
+        "voucher_receiver_name": "Eva McLaughlin",
+        "code": "WXU2FIRAWVMF",
+        "created_at": "2020-04-04 01:39:25",
         "service": {
-            "id": 6,
-            "image": "https:\/\/lorempixel.com\/640\/480\/?16904",
-            "title": "Alice, who was passing at the Hatter.",
-            "description": "Rerum ducimus inventore inventore qui qui error. Enim ad labore et. Corporis nostrum quibusdam et et alias facilis.",
-            "fee_int": 17100,
+            "id": 19,
+            "image": "https:\/\/lorempixel.com\/640\/480\/?76679",
+            "title": "Queen. First came ten soldiers.",
+            "description": "Quam aut in id. Id quis omnis culpa et accusantium eveniet vero. Eum totam est assumenda unde est consequuntur.",
+            "fee_int": 15600,
             "max_voucher_numbers": 800,
             "discount_int": 5,
-            "created_at": "2020-04-04 22:33:09",
+            "created_at": "2020-04-04 22:33:35",
             "company": {
-                "first_name": "Ron",
-                "last_name": "Leopoldo",
-                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/40.jpg",
-                "company_name": "Hintz, Christiansen and Moore",
-                "company_address": "34883 Hayes Glens\nWest Alexys, MD 76373-7880"
+                "first_name": "Marge",
+                "last_name": "Anderson",
+                "avatar": "https:\/\/randomuser.me\/api\/portraits\/women\/13.jpg",
+                "company_name": "Johnson and Sons",
+                "company_address": "7639 Waters Radial Apt. 871\nNew Dillanstad, NV 94662"
             }
         }
     }
