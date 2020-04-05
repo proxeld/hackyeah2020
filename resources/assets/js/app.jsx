@@ -8,6 +8,9 @@ import { history } from 'utils/history'
 import { store } from 'store/create-store'
 import { DashboardLayout, FormPageLayout } from 'layouts'
 import { ShieldFormPageLayout } from './layouts/FormPage';
+import CompanyProfile from "./pages/CompanyProfile/CompanyProfile";
+import ClientSiteLayout from "./layouts/ClientSite/ClientSite";
+import ServiceOrder from "./pages/ServiceOrder/ServiceOrder";
 
 const LogIn = lazy(() => import('pages/LogIn/LogIn'))
 const SignUp = lazy(() => import('pages/SignUp/SignUp'))
@@ -77,6 +80,26 @@ export const App = () => (
                 <FormPageLayout title="Reset Password">
                   <PasswordReset />
                 </FormPageLayout>
+              )}
+            />
+
+            {/* Client site routes */}
+            <Route
+              exact
+              path="/company/:id"
+              render={({match}) => (
+               <ClientSiteLayout>
+                 <CompanyProfile match={match} />
+               </ClientSiteLayout>
+              )}
+            />
+            <Route
+              exact
+              path="/company/:companyId/service/:serviceId"
+              render={({match}) => (
+               <ClientSiteLayout>
+                 <ServiceOrder match={match} />
+               </ClientSiteLayout>
               )}
             />
 
