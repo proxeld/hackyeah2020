@@ -9,8 +9,8 @@ describe('session action creators', () => {
 
     const userData = {
       slug: 'xVdQ2',
-      first_name: 'Carwyn',
-      last_name: 'Stephen'
+      first_name: 'Test',
+      last_name: 'Test'
     }
 
     beforeEach(() => {

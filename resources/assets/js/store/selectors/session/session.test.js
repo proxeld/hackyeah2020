@@ -5,7 +5,7 @@ describe('session selector', () => {
     it('retrieves the current user from the store', () => {
       const userObject = {
         id: 1,
-        name: 'Carwyn Stephen'
+        name: 'Test'
       }
 
       const storeObject = {

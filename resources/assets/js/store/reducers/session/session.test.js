@@ -7,8 +7,8 @@ describe('session reducer', () => {
 
   const mockUser = {
     slug: 'xVd2Q',
-    firstName: 'Carwyn',
-    lastName: 'Stephen',
+    firstName: 'Test',
+    lastName: 'Test',
     email: 'test@test.com'
   }
 
